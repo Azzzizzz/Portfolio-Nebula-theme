@@ -87,8 +87,89 @@ const Starfield = () => {
             }
         }
 
+        // Comet Class
+        class Comet {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = -100;
+                this.y = Math.random() * (height / 2); // Start in top half
+                this.size = 4; // Increased size
+                this.speed = 2.5;
+                this.angle = Math.PI / 6; // 30 degrees
+                this.tailLength = 250; // Longer tail for bigger comet
+                this.opacity = 0;
+                this.active = false;
+                // Randomize next appearance
+                this.nextAppearance = Date.now() + Math.random() * 10000 + 5000; // 5-15s delay
+            }
+
+            update() {
+                if (!this.active) {
+                    if (Date.now() > this.nextAppearance) {
+                        this.active = true;
+                        this.opacity = 1;
+                        this.x = -100;
+                        this.y = Math.random() * (height / 3); // Top third
+                    }
+                    return;
+                }
+
+                this.x += this.speed * Math.cos(this.angle);
+                this.y += this.speed * Math.sin(this.angle);
+
+                // Fade out when leaving screen
+                if (this.x > width + 100 || this.y > height + 100) {
+                    this.active = false;
+                    this.reset();
+                }
+            }
+
+            draw() {
+                if (!this.active) return;
+
+                // Draw Tail
+                const gradient = ctx.createLinearGradient(
+                    this.x, this.y,
+                    this.x - this.tailLength * Math.cos(this.angle),
+                    this.y - this.tailLength * Math.sin(this.angle)
+                );
+                // Fire & Ice Gradient (Match Reference): White -> Yellow -> Orange -> Blue
+                gradient.addColorStop(0, `rgba(255, 255, 255, ${this.opacity})`); // Core (White)
+                gradient.addColorStop(0.1, `rgba(253, 224, 71, ${this.opacity * 0.9})`); // Inner Glow (Yellow)
+                gradient.addColorStop(0.3, `rgba(249, 115, 22, ${this.opacity * 0.7})`); // Mid Tail (Orange)
+                gradient.addColorStop(0.6, `rgba(59, 130, 246, ${this.opacity * 0.5})`); // Outer Tail (Blue)
+                gradient.addColorStop(1, `rgba(96, 165, 250, 0)`); // Fade out (Light Blue)
+
+                ctx.strokeStyle = gradient;
+                ctx.lineWidth = 6; // Thicker for more impact
+                ctx.lineCap = 'round';
+                ctx.beginPath();
+                ctx.moveTo(this.x, this.y);
+                ctx.lineTo(
+                    this.x - this.tailLength * Math.cos(this.angle),
+                    this.y - this.tailLength * Math.sin(this.angle)
+                );
+                ctx.stroke();
+
+                // Draw Head
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Glow
+                ctx.shadowBlur = 25;
+                ctx.shadowColor = "rgba(253, 224, 71, 0.9)"; // Yellow/Gold glow
+                ctx.fill();
+                ctx.shadowBlur = 0; // Reset shadow
+            }
+        }
+
         // Initialize Stars
-        for (let i = 0; i < 200; i++) {
+        for (let i = 0; i < 300; i++) {
             stars.push(new Star());
         }
 
@@ -96,6 +177,9 @@ const Starfield = () => {
         for (let i = 0; i < 2; i++) {
             shootingStars.push(new ShootingStar());
         }
+
+        // Initialize Comet
+        const comet = new Comet();
 
         const animate = () => {
             ctx.clearRect(0, 0, width, height);
@@ -117,6 +201,10 @@ const Starfield = () => {
                     shootingStars.splice(index, 1);
                 }
             });
+
+            // Update and Draw Comet
+            comet.update();
+            comet.draw();
 
             requestAnimationFrame(animate);
         };
