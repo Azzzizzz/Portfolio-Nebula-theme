@@ -1,39 +1,50 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Badge } from "@/components/ui/badge";
+import { Terminal, Server, Globe, Cpu, Database, Layout } from 'lucide-react';
 
 const skillCategories = [
     {
-        title: "Frontend",
-        skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Three.js", "Redux", "GraphQL"]
+        title: "Frontend Engineering",
+        icon: Layout,
+        description: "Building immersive, responsive, and performant user interfaces.",
+        skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Three.js", "WebGL"]
     },
     {
-        title: "Backend",
-        skills: ["Node.js", "Express", "Go", "PostgreSQL", "Redis", "MongoDB", "Firebase", "Supabase"]
+        title: "Backend Architecture",
+        icon: Server,
+        description: "Designing robust, scalable, and secure server-side systems.",
+        skills: ["Node.js", "Go", "PostgreSQL", "Redis", "GraphQL", "Docker", "Kubernetes"]
     },
     {
         title: "DevOps & Tools",
-        skills: ["Docker", "Kubernetes", "AWS", "CI/CD", "Git", "Jest", "Cypress", "Linux"]
+        icon: Terminal,
+        description: "Streamlining deployment pipelines and ensuring reliability.",
+        skills: ["AWS", "CI/CD", "Git", "Linux", "Terraform", "Jest", "Cypress"]
     }
 ];
 
 const Skills = () => {
     return (
-        <section id="skills" className="py-20 relative overflow-hidden">
+        <section id="skills" className="py-32 relative overflow-hidden">
             {/* Background Elements */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-neon-blue/10 rounded-full blur-[100px] -z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] -z-10 animate-pulse" />
 
-            <div className="container mx-auto px-6">
-                <motion.h2
+            <div className="container mx-auto px-6 relative z-10">
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-3xl md:text-4xl font-bold mb-16 text-center"
+                    className="text-center mb-20"
                 >
-                    <span className="text-neon-blue">#</span> Technical Arsenal
-                </motion.h2>
+                    <h2 className="text-5xl md:text-7xl font-syne font-bold mb-6">
+                        Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Arsenal</span>
+                    </h2>
+                    <p className="text-xl text-gray-400 font-light max-w-2xl mx-auto">
+                        A curated set of technologies I use to bring digital visions to life.
+                    </p>
+                </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {skillCategories.map((category, index) => (
                         <motion.div
                             key={category.title}
@@ -41,23 +52,34 @@ const Skills = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="text-center"
+                            className="group relative"
                         >
-                            <h3 className="text-xl font-semibold mb-6 text-white border-b border-white/10 pb-2 inline-block">
-                                {category.title}
-                            </h3>
-                            <div className="flex flex-wrap justify-center gap-3">
-                                {category.skills.map((skill) => (
-                                    <motion.div
-                                        key={skill}
-                                        whileHover={{ scale: 1.05 }}
-                                        whileTap={{ scale: 0.95 }}
-                                    >
-                                        <Badge className="bg-white/5 hover:bg-neon-blue/20 text-gray-300 hover:text-neon-blue border-transparent hover:border-neon-blue/50 transition-all duration-300 py-2 px-4 text-sm cursor-default">
+                            {/* Card Glow */}
+                            <div className="absolute -inset-0.5 bg-gradient-to-b from-white/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                            {/* Card Content */}
+                            <div className="relative h-full bg-black/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:bg-white/5 transition-colors duration-300">
+                                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                    <category.icon className="w-6 h-6 text-primary group-hover:text-white transition-colors" />
+                                </div>
+
+                                <h3 className="text-2xl font-syne font-bold text-white mb-3">
+                                    {category.title}
+                                </h3>
+                                <p className="text-gray-400 text-sm mb-8 leading-relaxed">
+                                    {category.description}
+                                </p>
+
+                                <div className="flex flex-wrap gap-2">
+                                    {category.skills.map((skill, idx) => (
+                                        <span
+                                            key={skill}
+                                            className="px-3 py-1.5 text-xs font-mono text-gray-300 bg-white/5 border border-white/10 rounded-lg group-hover:border-primary/30 group-hover:text-white transition-all duration-300"
+                                        >
                                             {skill}
-                                        </Badge>
-                                    </motion.div>
-                                ))}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
                         </motion.div>
                     ))}
