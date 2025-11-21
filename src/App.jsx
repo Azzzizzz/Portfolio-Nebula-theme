@@ -8,6 +8,8 @@ import Skills from '@/components/Skills';
 import Footer from '@/components/Footer';
 import Starfield from '@/components/Starfield';
 
+import Contact from '@/components/Contact';
+
 function App() {
   return (
     <div className="min-h-screen text-white selection:bg-neon-cyan selection:text-obsidian font-sans relative overflow-hidden">
@@ -22,6 +24,7 @@ function App() {
           <Experience />
           <Projects />
           <Skills />
+          <Contact />
         </main>
         <Footer />
       </div>
