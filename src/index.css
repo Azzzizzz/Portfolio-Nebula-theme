@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,48 +6,38 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 183 100% 50%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 183 100% 50%;
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 0 0% 4%;
+    /* Base Colors - Deep Obsidian & Starlight */
+    --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
-    --card: 0 0% 7%;
+
+    /* Card & UI Elements - Glassmorphic Base */
+    --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
-    --popover: 0 0% 7%;
+    --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 183 100% 50%;
-    --primary-foreground: 0 0% 4%;
-    --secondary: 240 3.7% 15.9%;
+
+    /* Primary Accent - Electric Cyan */
+    --primary: 190 100% 50%;
+    --primary-foreground: 240 5.9% 10%;
+
+    /* Secondary Accent - Vivid Violet */
+    --secondary: 270 100% 60%;
     --secondary-foreground: 0 0% 98%;
+
+    /* Muted Elements */
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
+
+    /* Destructive Actions */
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
+
+    /* Borders & Inputs */
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 183 100% 50%;
+    --ring: 190 100% 50%;
+
+    --radius: 0.75rem;
   }
 }
 
@@ -57,26 +47,55 @@
   }
 
   body {
-    @apply bg-space-black text-white font-sans antialiased selection:bg-neon-cyan selection:text-obsidian relative;
-    /* Vibrant Nebula Gradient: Violet 800 -> Blue 900 -> Slate 950 -> Black */
-    background: radial-gradient(circle at 50% 30%, #5b21b6 0%, #1e3a8a 30%, #020617 70%, #000000 100%);
+    @apply bg-background text-foreground antialiased selection:bg-primary selection:text-black relative;
+    font-family: 'Space Grotesk', sans-serif;
+
+    /* Deep Space Gradient Background */
+    background-color: #050505;
+    background-image:
+      radial-gradient(circle at 15% 50%, rgba(76, 29, 149, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.15) 0%, transparent 50%);
     background-attachment: fixed;
   }
 
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 50;
-    opacity: 0.03;
-    /* Noise texture removed as per user request for cleaner space look */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Syne', sans-serif;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
   }
 }
 
 @layer utilities {
-  /* Grid removed for Starfield */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl;
+  }
+
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
 }
