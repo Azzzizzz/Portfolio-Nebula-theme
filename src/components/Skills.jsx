@@ -1,27 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, Server, Globe, Cpu, Database, Layout } from 'lucide-react';
-
-const skillCategories = [
-    {
-        title: "Frontend Engineering",
-        icon: Layout,
-        description: "Building immersive, responsive, and performant user interfaces.",
-        skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Three.js", "WebGL"]
-    },
-    {
-        title: "Backend Architecture",
-        icon: Server,
-        description: "Designing robust, scalable, and secure server-side systems.",
-        skills: ["Node.js", "Go", "PostgreSQL", "Redis", "GraphQL", "Docker", "Kubernetes"]
-    },
-    {
-        title: "DevOps & Tools",
-        icon: Terminal,
-        description: "Streamlining deployment pipelines and ensuring reliability.",
-        skills: ["AWS", "CI/CD", "Git", "Linux", "Terraform", "Jest", "Cypress"]
-    }
-];
+import { skillCategories } from '@/constants';
 
 const Skills = () => {
     return (

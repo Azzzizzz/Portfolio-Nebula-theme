@@ -1,5 +1,6 @@
 import React from 'react';
 import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { personalInfo } from '@/constants';
 
 const Footer = () => {
     return (
@@ -7,23 +8,16 @@ const Footer = () => {
             <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
                 <div className="mb-4 md:mb-0">
                     <p className="text-gray-500 text-sm">
-                        © {new Date().getFullYear()} Dev Portfolio. Built with React & Tailwind.
+                        © {new Date().getFullYear()} {personalInfo.name}. Built with React & Tailwind.
                     </p>
                 </div>
 
                 <div className="flex space-x-6">
-                    <a href="#" className="text-gray-500 hover:text-neon-cyan transition-colors">
-                        <Github className="w-5 h-5" />
-                    </a>
-                    <a href="#" className="text-gray-500 hover:text-neon-violet transition-colors">
-                        <Linkedin className="w-5 h-5" />
-                    </a>
-                    <a href="#" className="text-gray-500 hover:text-neon-blue transition-colors">
-                        <Twitter className="w-5 h-5" />
-                    </a>
-                    <a href="mailto:hello@example.com" className="text-gray-500 hover:text-white transition-colors">
-                        <Mail className="w-5 h-5" />
-                    </a>
+                    {personalInfo.social.map((social) => (
+                        <a key={social.name} href={social.url} className="text-gray-500 hover:text-neon-cyan transition-colors">
+                            <social.icon className="w-5 h-5" />
+                        </a>
+                    ))}
                 </div>
             </div>
         </footer>

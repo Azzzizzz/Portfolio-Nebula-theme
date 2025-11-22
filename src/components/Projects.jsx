@@ -1,37 +1,8 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowUpRight, Github } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-const projects = [
-    {
-        id: 1,
-        title: "Nebula Dashboard",
-        category: "FinTech",
-        description: "Real-time crypto analytics with interactive D3.js visualizations.",
-        tags: ["React", "D3.js", "WebSocket"],
-        image: "https://images.unsplash.com/photo-1642104704074-907c0698cbd9?q=80&w=2532&auto=format&fit=crop",
-        links: { demo: "#", github: "#" }
-    },
-    {
-        id: 2,
-        title: "Aether Chat",
-        category: "Communication",
-        description: "End-to-end encrypted messaging with a focus on privacy.",
-        tags: ["Next.js", "Socket.io", "Redis"],
-        image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=2574&auto=format&fit=crop",
-        links: { demo: "#", github: "#" }
-    },
-    {
-        id: 3,
-        title: "Void Commerce",
-        category: "E-Commerce",
-        description: "Headless e-commerce starter kit for high-performance stores.",
-        tags: ["Gatsby", "Shopify API", "GraphQL"],
-        image: "https://plus.unsplash.com/premium_photo-1720503965220-10ea698bf0aa?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        links: { demo: "#", github: "#" }
-    }
-];
+import { projects } from '@/constants';
 
 const ProjectCard = ({ project, index }) => {
     const [isHovered, setIsHovered] = useState(false);

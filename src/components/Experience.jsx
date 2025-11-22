@@ -2,35 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Briefcase } from "lucide-react";
+import { Briefcase } from "lucide-react";
 import Tilt from 'react-parallax-tilt';
-
-const experiences = [
-    {
-        id: 1,
-        role: "Senior Software Engineer",
-        company: "TechNova Solutions",
-        period: "2022 - Present",
-        description: "Leading the frontend architecture migration to React/Next.js. Improved site performance by 40% and mentored junior developers.",
-        skills: ["React", "Next.js", "TypeScript", "GraphQL"]
-    },
-    {
-        id: 2,
-        role: "Software Engineer",
-        company: "Quantum Systems",
-        period: "2019 - 2022",
-        description: "Developed scalable microservices using Node.js and Go. Implemented real-time data visualization dashboards for fintech clients.",
-        skills: ["Node.js", "Go", "PostgreSQL", "Docker"]
-    },
-    {
-        id: 3,
-        role: "Frontend Developer",
-        company: "Creative Pulse",
-        period: "2017 - 2019",
-        description: "Built responsive web applications for various clients. Collaborated closely with designers to implement pixel-perfect UIs.",
-        skills: ["JavaScript", "Vue.js", "SASS", "Firebase"]
-    }
-];
+import { experiences } from '@/constants';
 
 const Experience = () => {
     return (

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, Mail, MapPin, Phone } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import { personalInfo } from '@/constants';
 
 const Contact = () => {
     const [formState, setFormState] = useState({
@@ -14,6 +15,8 @@ const Contact = () => {
         e.preventDefault();
         // Handle form submission logic here
         console.log('Form submitted:', formState);
+        alert("Thank you for your message! This is a demo form.");
+        setFormState({ name: '', email: '', message: '' });
     };
 
     const handleChange = (e) => {
@@ -51,7 +54,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-lg font-syne font-bold text-white mb-1">Email Me</h4>
-                                    <a href="mailto:hello@dev.io" className="text-gray-400 hover:text-white transition-colors">hello@dev.io</a>
+                                    <a href={personalInfo.social.find(s => s.name === "Email").url} className="text-gray-400 hover:text-white transition-colors">{personalInfo.email}</a>
                                 </div>
                             </div>
 
@@ -61,7 +64,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-lg font-syne font-bold text-white mb-1">Location</h4>
-                                    <p className="text-gray-400">San Francisco, CA</p>
+                                    <p className="text-gray-400">{personalInfo.location}</p>
                                 </div>
                             </div>
 
@@ -71,7 +74,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-lg font-syne font-bold text-white mb-1">Phone</h4>
-                                    <p className="text-gray-400">+1 (555) 123-4567</p>
+                                    <p className="text-gray-400">{personalInfo.phone}</p>
                                 </div>
                             </div>
                         </div>

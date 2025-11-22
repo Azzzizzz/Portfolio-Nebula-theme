@@ -5,10 +5,11 @@ import About from '@/components/About';
 import Experience from '@/components/Experience';
 import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
+import Testimonials from '@/components/Testimonials';
+import Blog from '@/components/Blog';
+import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Starfield from '@/components/Starfield';
-
-import Contact from '@/components/Contact';
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
           <Experience />
           <Projects />
           <Skills />
+          <Testimonials />
+          <Blog />
           <Contact />
         </main>
         <Footer />

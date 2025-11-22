@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download } from "lucide-react";
+import { personalInfo } from '@/constants';
 
 const Hero = () => {
     const containerVariants = {
@@ -35,7 +36,7 @@ const Hero = () => {
                 >
                     <motion.div variants={itemVariants}>
                         <span className="inline-block py-1 px-4 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-primary mb-8 backdrop-blur-md tracking-wide">
-                            Senior Software Engineer
+                            {personalInfo.role}
                         </span>
                     </motion.div>
 
@@ -53,19 +54,21 @@ const Hero = () => {
                         variants={itemVariants}
                         className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed"
                     >
-                        I craft high-performance web applications and scalable systems with a focus on elegant code and exceptional user experiences.
+                        {personalInfo.bio.description}
                     </motion.p>
 
                     <motion.div
                         variants={itemVariants}
                         className="flex flex-col sm:flex-row items-center justify-center gap-6"
                     >
-                        <Button size="lg" className="bg-white text-black hover:bg-gray-200 font-semibold px-8 py-6 rounded-full text-lg transition-all duration-300 hover:scale-105">
+                        <Button size="lg" className="bg-white text-black hover:bg-gray-200 font-semibold px-8 py-6 rounded-full text-lg transition-all duration-300 hover:scale-105" onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}>
                             View Projects <ArrowRight className="ml-2 w-5 h-5" />
                         </Button>
-                        <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 px-8 py-6 rounded-full text-lg backdrop-blur-sm">
-                            Download Resume <Download className="ml-2 w-5 h-5" />
-                        </Button>
+                        <a href="/resume.pdf" download>
+                            <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 px-8 py-6 rounded-full text-lg backdrop-blur-sm">
+                                Download Resume <Download className="ml-2 w-5 h-5" />
+                            </Button>
+                        </a>
                     </motion.div>
                 </motion.div>
             </div>

@@ -1,13 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Palette, Globe, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
+import { stats, aboutHighlights, personalInfo } from '@/constants';
 
 const About = () => {
-    const stats = [
-        { label: 'Years Experience', value: '5+' },
-        { label: 'Projects Completed', value: '50+' },
-        { label: 'Clients Worldwide', value: '30+' },
-    ];
 
     return (
         <section id="about" className="py-32 relative overflow-hidden">
@@ -36,15 +32,11 @@ const About = () => {
                             </span>
                         </h2>
                         <p className="text-xl text-gray-200 font-light leading-relaxed mb-8 max-w-lg">
-                            I bridge the gap between <span className="text-white font-medium">robust engineering</span> and <span className="text-white font-medium">artistic design</span>. My mission is to build immersive web experiences that leave a lasting impression.
+                            {personalInfo.bio.description}
                         </p>
 
                         <div className="flex flex-wrap gap-4">
-                            {[
-                                { icon: Code2, label: "Clean Code", color: "text-primary" },
-                                { icon: Palette, label: "Modern Design", color: "text-secondary" },
-                                { icon: Globe, label: "Global Reach", color: "text-neon-cyan" }
-                            ].map((item, idx) => (
+                            {aboutHighlights.map((item, idx) => (
                                 <div key={idx} className="flex items-center gap-2 px-5 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-colors duration-300">
                                     <item.icon className={`w-5 h-5 ${item.color}`} />
                                     <span className="text-sm font-medium text-gray-200">{item.label}</span>
@@ -70,7 +62,7 @@ const About = () => {
                             <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
 
                             <p className="text-lg md:text-xl text-gray-200 mb-10 leading-loose font-light">
-                                With a background in both <span className="text-white font-semibold">Computer Science</span> and <span className="text-white font-semibold">Fine Arts</span>, I approach every project with a dual mindset. I don't just write code; I compose experiences. From the first pixel to the final deploy, I ensure every detail serves a purpose.
+                                {personalInfo.bio.longDescription}
                             </p>
 
                             <div className="grid grid-cols-3 gap-8 border-t border-white/10 pt-10">
