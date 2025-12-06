@@ -32,8 +32,8 @@ const Navbar = () => {
             >
                 <div className="flex items-center justify-between">
                     <a href="#" className="text-xl font-bold tracking-tighter text-white group">
-                        <span className="font-syne group-hover:text-primary transition-colors duration-300">Dev</span>
-                        <span className="text-primary group-hover:text-white transition-colors duration-300">.io</span>
+                        <span className="font-syne group-hover:text-primary transition-colors duration-300">Aziz</span>
+                        <span className="text-primary group-hover:text-white transition-colors duration-300">Dev</span>
                     </a>
 
                     {/* Desktop Nav */}
