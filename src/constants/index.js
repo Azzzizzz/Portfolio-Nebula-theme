@@ -17,21 +17,21 @@ import {
 } from 'lucide-react';
 
 export const personalInfo = {
-    name: "Dev.io",
-    role: "Senior Software Engineer",
-    email: "hello@dev.io",
-    phone: "+1 (555) 123-4567",
-    location: "San Francisco, CA",
+    name: "Syed Abdul Aziz",
+    role: "Software Engineer",
+    email: "syedaziz9999@gmail.com",
+    phone: "+91 8328082973",
+    location: "Hyderabad, India",
     bio: {
-        title: "Crafting Digital Reality",
-        description: "I bridge the gap between robust engineering and artistic design. My mission is to build immersive web experiences that leave a lasting impression.",
-        longDescription: "With a background in both Computer Science and Fine Arts, I approach every project with a dual mindset. I don't just write code; I compose experiences. From the first pixel to the final deploy, I ensure every detail serves a purpose."
+        title: "Building Scalable Backend Systems",
+        description: "Software Engineer with 4+ years of experience designing and building scalable backend systems for learning platforms.",
+        longDescription: "I specialize in backend architecture and service development. From transforming offline LMS into production-ready online platforms to supporting high-traffic production systems, I focus on scalability, reliability, and performance. My expertise includes distributed systems, event-driven architecture, and secure authentication."
     },
     social: [
-        { name: "Github", icon: Github, url: "#" },
-        { name: "Linkedin", icon: Linkedin, url: "#" },
+        { name: "Github", icon: Github, url: "https://github.com/StartDust" },
+        { name: "Linkedin", icon: Linkedin, url: "https://www.linkedin.com/in/syed-abdul-aziz/" },
         { name: "Twitter", icon: Twitter, url: "#" },
-        { name: "Email", icon: Mail, url: "mailto:hello@dev.io" }
+        { name: "Email", icon: Mail, url: "mailto:syedaziz9999@gmail.com" }
     ]
 };
 
@@ -46,41 +46,41 @@ export const navLinks = [
 ];
 
 export const stats = [
-    { label: 'Years Experience', value: '5+' },
-    { label: 'Projects Completed', value: '50+' },
-    { label: 'Clients Worldwide', value: '30+' },
+    { label: 'Years Experience', value: '4+' },
+    { label: 'Projects Completed', value: '20+' },
+    { label: 'Users Served', value: '100K+' },
 ];
 
 export const aboutHighlights = [
-    { icon: Code2, label: "Clean Code", color: "text-primary" },
-    { icon: Palette, label: "Modern Design", color: "text-secondary" },
-    { icon: Globe, label: "Global Reach", color: "text-neon-cyan" }
+    { icon: Server, label: "Backend Systems", color: "text-primary" },
+    { icon: Database, label: "Scalable Arch", color: "text-secondary" },
+    { icon: Globe, label: "Distributed Teams", color: "text-neon-cyan" }
 ];
 
 export const experiences = [
     {
         id: 1,
         role: "Senior Software Engineer",
-        company: "TechNova Solutions",
-        period: "2022 - Present",
-        description: "Leading the frontend architecture migration to React/Next.js. Improved site performance by 40% and mentored junior developers.",
-        skills: ["React", "Next.js", "TypeScript", "GraphQL"]
+        company: "ESUHAI (via GoEnglishX - Payroll)",
+        period: "Jul 2025 – Present",
+        description: "Leading backend architecture to transform an offline LMS into a scalable online platform. Architected services from scratch, owning Authentication and Media services. Designed secure auth systems and scalable media services using Azure Blob Storage.",
+        skills: ["Backend Architecture", "Authentication", "Azure Blob Storage", "Kafka", "Redis"]
     },
     {
         id: 2,
-        role: "Software Engineer",
-        company: "Quantum Systems",
-        period: "2019 - 2022",
-        description: "Developed scalable microservices using Node.js and Go. Implemented real-time data visualization dashboards for fintech clients.",
-        skills: ["Node.js", "Go", "PostgreSQL", "Docker"]
+        role: "Software Engineer II",
+        company: "NativeX (via GoEnglishX - Payroll)",
+        period: "Apr 2023 – Jun 2025",
+        description: "Contributed to production systems for an English learning platform serving 100K+ users. Progressed from frontend to backend ownership. Designed notification systems and workflow engines for paid users.",
+        skills: ["Node.js", "Kafka", "Redis", "System Design", "Microservices"]
     },
     {
         id: 3,
-        role: "Frontend Developer",
-        company: "Creative Pulse",
-        period: "2017 - 2019",
-        description: "Built responsive web applications for various clients. Collaborated closely with designers to implement pixel-perfect UIs.",
-        skills: ["JavaScript", "Vue.js", "SASS", "Firebase"]
+        role: "Software Engineer",
+        company: "Topica (via Skuad - Payroll)",
+        period: "Nov 2021 – Mar 2023",
+        description: "Built responsive frontend components for Edumall and NativeX. Collaborated with cross-functional remote teams across India and Vietnam.",
+        skills: ["React.js", "Frontend", "Agile", "Remote Collaboration"]
     }
 ];
 
@@ -116,22 +116,22 @@ export const projects = [
 
 export const skillCategories = [
     {
+        title: "Backend & Architecture",
+        icon: Server,
+        description: "Designing scalable, distributed, and secure server-side systems.",
+        skills: ["Node.js", "NestJS", "Microservices", "Kafka", "Redis", "PostgreSQL", "MongoDB", "System Design"]
+    },
+    {
         title: "Frontend Engineering",
         icon: Layout,
         description: "Building immersive, responsive, and performant user interfaces.",
-        skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Three.js", "WebGL"]
+        skills: ["React.js", "Next.js", "TypeScript", "Material UI", "Tailwind CSS"]
     },
     {
-        title: "Backend Architecture",
-        icon: Server,
-        description: "Designing robust, scalable, and secure server-side systems.",
-        skills: ["Node.js", "Go", "PostgreSQL", "Redis", "GraphQL", "Docker", "Kubernetes"]
-    },
-    {
-        title: "DevOps & Tools",
+        title: "Cloud & DevOps",
         icon: Terminal,
         description: "Streamlining deployment pipelines and ensuring reliability.",
-        skills: ["AWS", "CI/CD", "Git", "Linux", "Terraform", "Jest", "Cypress"]
+        skills: ["AWS", "Azure", "Docker", "Nginx", "Git", "Jest", "CI/CD"]
     }
 ];
 
