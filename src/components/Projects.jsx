@@ -15,10 +15,10 @@ export default function Projects() {
     <section id="work" className="py-24 md:py-32">
       <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
         <MotionDiv
-          initial={{ opacity: 0, y: 24 }}
+          initial={reducedMotion ? false : { opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.7, ease: EASE }}
+          transition={{ duration: reducedMotion ? 0 : 0.7, ease: EASE }}
           className="mb-16"
         >
           <span className="label-mono">02 / Selected Work</span>
@@ -45,7 +45,11 @@ export default function Projects() {
                   initial={reducedMotion ? false : { opacity: 0, y: 14 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-80px' }}
-                  transition={{ duration: 0.45, delay: index * 0.06, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{
+                    duration: reducedMotion ? 0 : 0.45,
+                    delay: reducedMotion ? 0 : index * 0.06,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
                   className="bg-background p-6 md:p-8"
                 >
                   <div className="font-display text-[2.4rem] leading-none text-[hsl(var(--accent))] md:text-[3.2rem]">

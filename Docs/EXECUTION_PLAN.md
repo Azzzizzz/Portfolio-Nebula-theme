@@ -46,7 +46,7 @@ Every task below has the same shape:
 | 3a | Headline loop behavior | Loop **2 cycles** after first paint, then settle on `a hundred thousand` and stop. No infinite loop. |
 | 4 | Resume CTA in hero | No — moves to The Index |
 | 4a | Resume filename | `Syed_Abdul_Aziz_Software_Engineer.pdf` |
-| 5 | RAG demo in Phase 3 | Yes (~$5/mo) |
+| 5 | RAG demo in Phase 3 | **Draft / deferred.** Not in the current shipping scope. Revisit later if needed. |
 | 6 | Custom domain | Defer — stays on `*.vercel.app` for Phase 1; revisit before Phase 3 |
 | 7 | Testimonials | **Removed entirely.** No standalone Testimonials section. Inline case-study quotes also removed. |
 | 8 | Blog / Field Notes | Section stays. **No fake dates, no fake URLs.** Each post tagged `[ DRAFTING ]`; section header reframed to *"Currently writing about"*. |
@@ -1010,9 +1010,11 @@ npm run build && grep -A4 "Hello\." dist/index.html && echo PASS || echo FAIL
 
 ## 4. Phase 3 — *The Kill Shot* (target: 2–3 evenings, ~9 hours)
 
-### P3-T1 — Embedded RAG "Ask My Portfolio" Demo
+### P3-T1 — Embedded RAG "Ask My Portfolio" Demo *(Draft / Deferred)*
 
 **GOAL**: the most differentiated feature on the site. A working RAG over Syed's career corpus.
+
+**STATUS**: Draft only. Removed from the current build by request. Do not treat this as active scope for the current ship.
 
 **TOUCH**: `api/ask.js` (new — Vercel Edge Function), `src/components/AskMe.jsx`, an embedded knowledge base.
 

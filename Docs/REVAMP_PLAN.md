@@ -124,7 +124,7 @@ The current site has 8 sections in the standard order. We're cutting to **6 deli
 | 3 | **Selected Work** | Projects | 3 long-form case studies with metrics. Not cards. |
 | 4 | **The Stack** | Skills + Experience merged | An interactive timeline + system layer view. |
 | 5 | **Field Notes** | Blog | Essays, not "blog posts." |
-| 6 | **Make Contact** | Contact | One-line invitation + functional form + RAG demo. |
+| 6 | **Make Contact** | Contact | One-line invitation + functional form. RAG demo is draft/deferred. |
 
 About + Testimonials are folded **inside** other sections, not standalone. Standalone About is a portfolio cliché; testimonials between projects are evidence in context.
 
@@ -527,7 +527,7 @@ The portfolio that gets you the interview. Doubles down on backend depth + AI sh
 
 ### Phase 3 — *the kill shot* (2–3 evenings)
 The portfolio nobody else has.
-- [ ] Build the embedded RAG "Ask my portfolio" demo (Vercel Edge + OpenAI streaming)
+- [ ] Build the embedded RAG "Ask my portfolio" demo (Vercel Edge + OpenAI streaming) — draft/deferred, not current scope
 - [ ] Add `/case/[slug]` reading-mode routes for full case studies on cream paper
 - [ ] Add `now.json`-driven NOW row that you maintain weekly
 - [ ] Add `prefers-reduced-motion` paths

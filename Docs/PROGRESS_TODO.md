@@ -15,9 +15,9 @@ Source of truth for scope: [EXECUTION_PLAN.md](./EXECUTION_PLAN.md)
 
 | Item | Status |
 | --- | --- |
-| Current phase | Phase 2 started |
-| Overall state | 🟨 Phase 1 code is in place and Phase 2 content work is underway. Remaining Phase 1 gaps are deployment/manual verification items. |
-| Active modified files | Phase 2 work currently touches case studies, stack storytelling, notes, and `index.html` |
+| Current phase | Phase 3 started |
+| Overall state | 🟨 Phase 1 and Phase 2 code paths are in place, and selected Phase 3 features are implemented locally. The Ask/chat demo is intentionally deferred as draft. |
+| Active modified files | Phase 3 work now touches routing, `now.json`, analytics wiring, and reduced-motion cleanup |
 | Current branch | `revamp-v1` |
 
 ## Phase 1
@@ -63,7 +63,12 @@ Source of truth for scope: [EXECUTION_PLAN.md](./EXECUTION_PLAN.md)
 
 | ID | Task Group | Status | Notes |
 | --- | --- | --- | --- |
-| `P3` | Phase 3 tasks | 🟥 Not Started | No Phase 3 execution has started yet. |
+| `P3-T1` | Embedded RAG "Ask My Portfolio" Demo | 🟥 Draft / Deferred | Removed from the current build by request. Keep as a draft idea for a later iteration, not an active deliverable. |
+| `P3-T2` | Reading-Mode Case-Study Routes | 🟩 Done | Added routed reading-mode pages for `/case/:slug` with a cream-paper presentation. |
+| `P3-T3` | `now.json` + NOW Row Wiring | 🟩 Done | Added `public/now.json` and Index now fetch wiring. |
+| `P3-T4` | `prefers-reduced-motion` Audit | 🟨 In Progress | Reduced-motion handling was tightened across the new/updated sections, but a full end-to-end browser audit is still pending. |
+| `P3-T5` | Analytics + Domain | 🟨 In Progress | `@vercel/analytics` is wired in `App.jsx`; custom domain and production verification are still pending. |
+| `P3-GATE` | Phase 3 final ship gate | 🟥 Not Done | Deployment, env vars, production tests, and domain/analytics verification are still open. |
 
 ## Follow-up Notes
 
@@ -73,3 +78,4 @@ Source of truth for scope: [EXECUTION_PLAN.md](./EXECUTION_PLAN.md)
 | Manual QA | `Docs/screenshots/after-phase-1/` and `Docs/phase-1-lighthouse.html` still need browser-based capture. |
 | Build artifact | `Docs/phase-1-build.txt` has been generated from the current local build. |
 | Phase 2 perf | Current built JS is about `126.99 kB` gzipped, so the later Phase 2 performance pass is still required. |
+| Phase 3 perf | The planned performance pass still needs to happen before final ship. |

@@ -1,27 +1,21 @@
+import { Analytics } from '@vercel/analytics/react';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import Index from '@/components/Index';
-import Now from '@/components/Now';
-import Projects from '@/components/Projects';
-import Stack from '@/components/Stack';
-import Blog from '@/components/Blog';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
+import Home from '@/routes/Home';
+import Case from '@/routes/Case';
 
 function App() {
+  const location = useLocation();
+  const showNavbar = !location.pathname.startsWith('/case/');
+
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-accent-ink">
-      <Navbar />
-      <main className="relative">
-        <Hero />
-        <Index />
-        <Now />
-        <Projects />
-        <Stack />
-        <Blog />
-        <Contact />
-      </main>
-      <Footer />
+      {showNavbar ? <Navbar /> : null}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/case/:slug" element={<Case />} />
+      </Routes>
+      <Analytics />
     </div>
   );
 }

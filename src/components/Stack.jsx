@@ -1,9 +1,10 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { stackDepth, stackTimeline } from '@/constants';
 
 const EASE = [0.16, 1, 0.3, 1];
 
 export default function Stack() {
+  const reducedMotion = useReducedMotion();
   const MotionDiv = motion.div;
 
   return (
@@ -22,10 +23,14 @@ export default function Stack() {
           {stackTimeline.map((item, index) => (
             <MotionDiv
               key={item.company}
-              initial={{ opacity: 0, y: 18 }}
+              initial={reducedMotion ? false : { opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.55, delay: index * 0.08, ease: EASE }}
+              transition={{
+                duration: reducedMotion ? 0 : 0.55,
+                delay: reducedMotion ? 0 : index * 0.08,
+                ease: EASE,
+              }}
               className="bg-background p-6 md:p-8"
             >
               <p className="label-mono mb-3">{item.period}</p>
@@ -40,19 +45,23 @@ export default function Stack() {
           {stackDepth.map((item, index) => (
             <MotionDiv
               key={item.layer}
-              initial={{ opacity: 0, y: 18 }}
+              initial={reducedMotion ? false : { opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.55, delay: index * 0.05, ease: EASE }}
+              transition={{
+                duration: reducedMotion ? 0 : 0.55,
+                delay: reducedMotion ? 0 : index * 0.05,
+                ease: EASE,
+              }}
               className="grid gap-4 md:grid-cols-[220px_minmax(0,1fr)_300px] md:items-center"
             >
               <div className="label-mono">{item.layer}</div>
               <div className="h-3 overflow-hidden rounded-full bg-white/[0.06]">
                 <motion.div
-                  initial={{ width: 0 }}
+                  initial={reducedMotion ? false : { width: 0 }}
                   whileInView={{ width: `${item.depth * 100}%` }}
                   viewport={{ once: true, margin: '-80px' }}
-                  transition={{ duration: 1.05, ease: EASE }}
+                  transition={{ duration: reducedMotion ? 0 : 1.05, ease: EASE }}
                   className="h-full rounded-full bg-[hsl(var(--accent))]"
                 />
               </div>

@@ -76,6 +76,12 @@ export const indexEntries = [
   },
 ];
 
+export const defaultNowEntry = {
+  title: 'Currently shipping: LLM evaluation engine',
+  url: '#now',
+  updated: '2026-04-28',
+};
+
 export const nowCard = {
   eyebrow: '01 / Now',
   headline: 'From launch-day systems to production AI.',
@@ -183,6 +189,81 @@ export const aiLayerCase = {
 };
 
 export const caseStudies = [featuredCase, tikmeCase, aiLayerCase];
+
+export const casePages = {
+  nativex: {
+    slug: 'nativex',
+    title: 'NativeX',
+    kicker: 'Scale story',
+    intro:
+      'NativeX is the proof that I can stay with a product after launch and keep the backend standing while the user graph bends upward.',
+    sections: [
+      {
+        heading: 'What changed',
+        body:
+          'I joined early enough that the right answer was usually a tradeoff, not a pattern library. Over time I moved into full backend ownership of Identity, Wallet, Scheduling, and Notifications.',
+      },
+      {
+        heading: 'Why it mattered',
+        body:
+          'The platform moved from launch-day ambiguity to 100K+ trial users and around 5K paid users. That meant systems had to survive partial failures, eligibility rules, payment logic, and user communication at scale.',
+      },
+      {
+        heading: 'What I shipped',
+        body:
+          'The weekly pacing notification pipeline pulled data across four upstream services, tolerated partial failures with Promise.allSettled, published through Kafka, and enforced a Redis token-bucket limit at 500 notifications per minute.',
+      },
+    ],
+  },
+  tikme: {
+    slug: 'tikme',
+    title: 'TikMe',
+    kicker: 'Architecture story',
+    intro:
+      'TikMe was greenfield architecture work on top of a mature business. The job was not to invent a startup toy. It was to digitize a 25-year-old operation with clear service boundaries and production behavior from day one.',
+    sections: [
+      {
+        heading: 'System shape',
+        body:
+          'Apollo Federation sat at the edge, Kafka carried domain events, Redis handled sessions and pub/sub, and the real-time service was designed as generic event delivery rather than a chat-only sidecar.',
+      },
+      {
+        heading: 'Hard constraints',
+        body:
+          'Authentication had to stay distributed, RBAC needed policy-based enforcement, and the WebSocket layer needed to survive 10K concurrent connections per pod without becoming a cross-service bottleneck.',
+      },
+      {
+        heading: 'What I optimized for',
+        body:
+          'Independent scaling, clean service contracts, and operational reliability. The architecture had to make later product decisions cheaper rather than harder.',
+      },
+    ],
+  },
+  'ai-layer': {
+    slug: 'ai-layer',
+    title: 'The AI Layer',
+    kicker: 'Grounded AI story',
+    intro:
+      'The differentiator was not “we added AI.” It was that the system stayed observable, editable, and grounded in internal context instead of turning into an expensive black box.',
+    sections: [
+      {
+        heading: 'Evaluation engine',
+        body:
+          'Prompt templates lived outside deployments, providers could be switched between OpenAI and Claude, and every call carried token counts, cost, and latency so the feature could be managed like software instead of magic.',
+      },
+      {
+        heading: 'Retrieval layer',
+        body:
+          'I built retrieval over Jira and Confluence using embeddings, Atlas Vector Search, and streaming answers so internal questions could resolve against actual documentation instead of institutional memory.',
+      },
+      {
+        heading: 'Why it worked',
+        body:
+          'The architecture treated AI as one subsystem among others: versioned, measurable, and constrained by business rules rather than demo energy.',
+      },
+    ],
+  },
+};
 
 export const stackTimeline = [
   {

@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const EASE = [0.16, 1, 0.3, 1];
 
@@ -70,6 +71,15 @@ export default function CaseStudy({
       </div>
 
       {children}
+
+      <div className="mt-8">
+        <Link
+          to={`/case/${study.id}`}
+          className="label-mono rounded-sm text-foreground transition-colors hover:text-[hsl(var(--accent))]"
+        >
+          Read full case study →
+        </Link>
+      </div>
 
       <div className="mt-8 flex flex-wrap gap-2">
         <span className="label-mono mr-2">Stack</span>

@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { useState } from 'react';
 import { ArrowRight, Mail, MapPin } from 'lucide-react';
 import { personalInfo } from '@/constants';
@@ -12,6 +12,7 @@ const INITIAL_FORM = {
 };
 
 export default function Contact() {
+  const reducedMotion = useReducedMotion();
   const [formState, setFormState] = useState(INITIAL_FORM);
   const [status, setStatus] = useState('idle');
   const [error, setError] = useState('');
@@ -97,10 +98,10 @@ export default function Contact() {
             {status === 'sent' ? (
               <MotionDiv
                 key="sent"
-                initial={{ opacity: 0, y: 18 }}
+                initial={reducedMotion ? false : { opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -18 }}
-                transition={{ duration: 0.45, ease: EASE }}
+                exit={reducedMotion ? undefined : { opacity: 0, y: -18 }}
+                transition={{ duration: reducedMotion ? 0 : 0.45, ease: EASE }}
                 className="rounded-[1.9rem] border border-white/[0.08] bg-white/[0.03] p-8 md:p-10"
               >
                 <p className="label-mono accent-text">Message received</p>
@@ -121,10 +122,10 @@ export default function Contact() {
             ) : (
               <MotionForm
                 key="form"
-                initial={{ opacity: 0, y: 18 }}
+                initial={reducedMotion ? false : { opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -18 }}
-                transition={{ duration: 0.45, ease: EASE }}
+                exit={reducedMotion ? undefined : { opacity: 0, y: -18 }}
+                transition={{ duration: reducedMotion ? 0 : 0.45, ease: EASE }}
                 onSubmit={handleSubmit}
                 className="space-y-6 rounded-[1.9rem] border border-white/[0.08] bg-white/[0.03] p-8 md:p-10"
               >
