@@ -9,8 +9,7 @@ import {
     MapPin,
     Phone,
     Github,
-    Linkedin,
-    Twitter
+    Linkedin
 } from 'lucide-react';
 
 export const personalInfo = {
@@ -25,9 +24,8 @@ export const personalInfo = {
         longDescription: "I specialize in designing and owning microservices end-to-end — from authentication and real-time WebSocket infrastructure to Kafka-based event pipelines and AI evaluation engines. At Esuahi, I led the greenfield backend architecture for a 25-year-old education company's digital transformation. At NativeX, I scaled the platform from zero to 100K+ users. I now integrate LLMs (OpenAI, Claude) into production systems — building RAG pipelines, provider-abstracted evaluation engines with cost tracking, and semantic search over enterprise knowledge bases."
     },
     social: [
-        { name: "Github", icon: Github, url: "https://github.com/StartDust" },
+        { name: "Github", icon: Github, url: "https://github.com/Azzzizzz" },
         { name: "Linkedin", icon: Linkedin, url: "https://www.linkedin.com/in/syed-abdul-aziz/" },
-        { name: "Twitter", icon: Twitter, url: "#" },
         { name: "Email", icon: Mail, url: "mailto:syedaziz9999@gmail.com" }
     ]
 };
@@ -132,56 +130,31 @@ export const skillCategories = [
     }
 ];
 
-export const testimonials = [
-    {
-        id: 1,
-        name: "Nguyen Thi Lan",
-        role: "Engineering Manager, NativeX",
-        content: "Aziz consistently delivered backend systems that held up under real production load. His ownership of the Notification and Identity services was exceptional — he designed, shipped, and monitored them end-to-end without hand-holding.",
-        avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop"
-    },
-    {
-        id: 2,
-        name: "Tran Minh Duc",
-        role: "Product Manager, NativeX",
-        content: "One of the few engineers who understood both the technical depth and the business impact of what he was building. The Kafka notification pipeline he designed scaled reliably as we crossed 100K users.",
-        avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop"
-    },
-    {
-        id: 3,
-        name: "Pham Quoc Bao",
-        role: "Senior Engineer, Esuahi / TikMe",
-        content: "Aziz architected the entire TikMe backend from scratch — microservices, auth, real-time, media, and AI evaluation. His ability to make the right architectural call early, and then follow through on the implementation, is rare.",
-        avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop"
-    }
-];
+// Testimonials removed per locked decision §7 — removed entirely.
+export const testimonials = [];
 
+// Field Notes — section header to read "Currently writing about" (render change in P2-T4).
+// No fake dates, no fake URLs. Each post tagged DRAFTING.
 export const blogPosts = [
     {
         id: 1,
         title: "Building a Kafka Notification Pipeline at Scale",
         excerpt: "How we designed idempotent, rate-limited notifications for 5K+ paid users — aggregating across 4 microservices with a Redis token bucket and partial-failure tolerance via Promise.allSettled.",
-        date: "Mar 10, 2026",
-        readTime: "7 min read",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2068&auto=format&fit=crop",
-        url: "#"
+        status: 'DRAFTING',
+        url: null
     },
     {
         id: 2,
         title: "JWT RS256 in Microservices: Why Asymmetric Signing Matters",
         excerpt: "A deep dive into why we chose RS256 over HS256 — distributed token verification, eliminating auth-service as a single point of failure, and how we paired it with Redis for 90% DB load reduction.",
-        date: "Jan 22, 2026",
-        readTime: "6 min read",
-        image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2070&auto=format&fit=crop",
-        url: "#"
+        status: 'DRAFTING',
+        url: null
     },
     {
         id: 3,
         title: "RAG Pipelines in Production: From Embeddings to GPT-4o Streaming",
         excerpt: "Lessons from building an enterprise RAG system over Jira and Confluence — chunking strategy, MongoDB Atlas Vector Search, streaming responses, and the MCP architecture that makes it multi-source.",
-        date: "Nov 15, 2025",
-        readTime: "9 min read",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2065&auto=format&fit=crop",
-        url: "#"
+        status: 'DRAFTING',
+        url: null
     }
 ];

@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Briefcase } from "lucide-react";
-import Tilt from 'react-parallax-tilt';
 import { experiences } from '@/constants';
 
 const Experience = () => {
@@ -39,13 +38,7 @@ const Experience = () => {
 
                                 {/* Content Card */}
                                 <div className="md:w-1/2 pl-8 md:pl-0 md:px-8">
-                                    <Tilt
-                                        tiltMaxAngleX={3}
-                                        tiltMaxAngleY={3}
-                                        glareEnable={true}
-                                        glareMaxOpacity={0.05}
-                                    >
-                                        <Card className="bg-glass border-white/10 backdrop-blur-md hover:border-neon-cyan/50 transition-colors duration-300">
+                                    <Card className="bg-glass border-white/10 backdrop-blur-md hover:border-neon-cyan/50 transition-colors duration-300">
                                             <CardHeader>
                                                 <div className="flex justify-between items-start mb-2">
                                                     <CardTitle className="text-xl font-bold text-white">{exp.role}</CardTitle>
@@ -69,7 +62,6 @@ const Experience = () => {
                                                 </div>
                                             </CardContent>
                                         </Card>
-                                    </Tilt>
                                 </div>
 
                                 {/* Empty space for the other side */}
