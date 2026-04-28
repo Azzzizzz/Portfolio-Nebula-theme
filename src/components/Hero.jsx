@@ -1,82 +1,120 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Download } from "lucide-react";
+import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { personalInfo } from '@/constants';
 
-const Hero = () => {
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.3,
-            },
-        },
+const HERO_SEQUENCE = ['one', 'a hundred thousand', 'one', 'a hundred thousand'];
+const EASE = [0.16, 1, 0.3, 1];
+
+export default function Hero() {
+  const [step, setStep] = useState(0);
+  const [time, setTime] = useState('');
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const sync = () => setReducedMotion(media.matches);
+    sync();
+    media.addEventListener('change', sync);
+    return () => media.removeEventListener('change', sync);
+  }, []);
+
+  useEffect(() => {
+    if (reducedMotion || step >= HERO_SEQUENCE.length - 1) {
+      return undefined;
+    }
+
+    const timeout = window.setTimeout(() => {
+      setStep((current) => current + 1);
+    }, step === 0 ? 2200 : 2400);
+
+    return () => window.clearTimeout(timeout);
+  }, [reducedMotion, step]);
+
+  useEffect(() => {
+    const updateTime = () => {
+      const value = new Intl.DateTimeFormat('en-IN', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+        timeZone: personalInfo.timezone,
+      }).format(new Date());
+
+      setTime(`${value} IST`);
     };
 
-    const itemVariants = {
-        hidden: { y: 30, opacity: 0 },
-        visible: {
-            y: 0,
-            opacity: 1,
-            transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
-        },
-    };
+    updateTime();
+    const interval = window.setInterval(updateTime, 30_000);
+    return () => window.clearInterval(interval);
+  }, []);
 
-    return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-            <div className="container mx-auto px-6 text-center z-10">
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate="visible"
-                    className="flex flex-col items-center"
-                >
-                    <motion.div variants={itemVariants}>
-                        <span className="inline-block py-1 px-4 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-primary mb-8 backdrop-blur-md tracking-wide">
-                            {personalInfo.role}
-                        </span>
-                    </motion.div>
+  const value = reducedMotion
+    ? HERO_SEQUENCE[HERO_SEQUENCE.length - 1]
+    : HERO_SEQUENCE[Math.min(step, HERO_SEQUENCE.length - 1)];
+  const struck = value === 'one';
+  const MotionH1 = motion.h1;
+  const MotionDiv = motion.div;
 
-                    <motion.h1
-                        variants={itemVariants}
-                        className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-8 font-syne"
-                    >
-                        Building the <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary animate-gradient-x">
-                            Future
-                        </span>
-                    </motion.h1>
+  return (
+    <section
+      id="top"
+      className="relative flex min-h-screen flex-col border-b border-white/[0.06]"
+    >
+      <div className="flex items-center justify-between border-b border-white/[0.06] px-5 py-4 md:px-8">
+        <span className="label-mono">{personalInfo.name} — in Hyderabad</span>
+        <span className="label-mono">{time}</span>
+      </div>
 
-                    <motion.p
-                        variants={itemVariants}
-                        className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed"
-                    >
-                        {personalInfo.bio.description}
-                    </motion.p>
+      <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-5 py-20 md:px-8">
+        <MotionH1
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.05, ease: EASE }}
+          className="font-display text-[3.3rem] leading-[0.96] tracking-[-0.05em] text-foreground sm:text-[4.2rem] md:text-[6rem] lg:text-[8rem]"
+        >
+          I take products
+          <br />
+          from zero
+          <br />
+          to{' '}
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={value}
+              initial={reducedMotion ? false : { opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={reducedMotion ? undefined : { opacity: 0, y: -12 }}
+              transition={{ duration: 0.55, ease: EASE }}
+              className={struck ? 'line-through decoration-2' : 'accent-text italic'}
+            >
+              {value}
+            </motion.span>
+          </AnimatePresence>
+          .
+        </MotionH1>
 
-                    <motion.div
-                        variants={itemVariants}
-                        className="flex flex-col sm:flex-row items-center justify-center gap-6"
-                    >
-                        <Button size="lg" className="bg-white text-black hover:bg-gray-200 font-semibold px-8 py-6 rounded-full text-lg transition-all duration-300 hover:scale-105" onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}>
-                            View Projects <ArrowRight className="ml-2 w-5 h-5" />
-                        </Button>
-                        <a href="/Syed_Abdul_Aziz_Software_Engineer.pdf" download="Syed_Abdul_Aziz_Software_Engineer.pdf">
-                            <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 px-8 py-6 rounded-full text-lg backdrop-blur-sm hover:scale-105 transition-all duration-300  ">
-                                Download Resume <Download className="ml-2 w-5 h-5" />
-                            </Button>
-                        </a>
-                    </motion.div>
-                </motion.div>
-            </div>
+        <MotionDiv
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.15, ease: EASE }}
+          className="mt-12 max-w-3xl"
+        >
+          <div className="mb-4 h-px w-16 bg-[hsl(var(--accent))]" />
+          <p className="label-mono leading-7 md:leading-8">
+            Full-stack engineer · backend-heavy · production AI
+            <br />
+            Hyderabad · 4+ yrs · open to senior / staff roles
+          </p>
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-ink-muted">
+            {personalInfo.bio.longDescription}
+          </p>
+        </MotionDiv>
+      </div>
 
-            {/* Subtle Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background pointer-events-none" />
-        </section>
-    );
-};
-
-export default Hero;
+      <div className="px-5 pb-8 md:px-8">
+        <span className="inline-flex items-center gap-3 rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2">
+          <span className="h-2 w-2 rounded-full bg-emerald-400" />
+          <span className="label-mono">{personalInfo.availability}</span>
+        </span>
+      </div>
+    </section>
+  );
+}

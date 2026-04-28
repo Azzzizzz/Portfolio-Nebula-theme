@@ -1,3 +1,5 @@
+import tailwindcssAnimate from 'tailwindcss-animate';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: 'class',
@@ -8,122 +10,87 @@ export default {
   theme: {
     extend: {
       colors: {
-        obsidian: '#0a0a0a',
-        glass: 'rgba(255, 255, 255, 0.05)',
-        neon: {
-          cyan: '#00f3ff',
-          violet: '#9d00ff',
-          blue: '#0066ff'
+        /* ── Design tokens ───────────────────────────── */
+        surface: {
+          0: 'hsl(var(--surface-0))',
+          1: 'hsl(var(--surface-1))',
+          2: 'hsl(var(--surface-2))',
         },
-        space: {
-          black: "#020617", // Slate 950
-          blue: "#172554",  // Blue 950
-          purple: "#2e1065", // Violet 950
-        },
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))'
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))'
-        },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))'
-        },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))'
+        ink: {
+          DEFAULT: 'hsl(var(--ink))',
+          muted:   'hsl(var(--ink-muted))',
+          faint:   'hsl(var(--ink-faint))',
         },
         accent: {
           DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))'
+          ink:     'hsl(var(--accent-ink))',
+        },
+
+        /* ── shadcn/ui compat ────────────────────────── */
+        border:     'hsl(var(--edge))',
+        input:      'hsl(var(--surface-2))',
+        ring:       'hsl(var(--accent))',
+        background: 'hsl(var(--surface-0))',
+        foreground: 'hsl(var(--ink))',
+        primary: {
+          DEFAULT:    'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-ink))',
+        },
+        secondary: {
+          DEFAULT:    'hsl(var(--surface-2))',
+          foreground: 'hsl(var(--ink))',
+        },
+        destructive: {
+          DEFAULT:    'hsl(0 62.8% 30.6%)',
+          foreground: 'hsl(0 0% 98%)',
+        },
+        muted: {
+          DEFAULT:    'hsl(var(--surface-2))',
+          foreground: 'hsl(var(--ink-muted))',
         },
         popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))'
+          DEFAULT:    'hsl(var(--surface-1))',
+          foreground: 'hsl(var(--ink))',
         },
         card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))'
-        }
+          DEFAULT:    'hsl(var(--surface-1))',
+          foreground: 'hsl(var(--ink))',
+        },
       },
+
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)'
+        sm: 'calc(var(--radius) - 4px)',
       },
+
       fontFamily: {
-        sans: ["Space Grotesk", "sans-serif"],
-        syne: ["Syne", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        sans:    ["'Geist'", "'Geist Sans'", "system-ui", "sans-serif"],
+        display: ["'Instrument Serif'", "Georgia", "serif"],
+        mono:    ["'JetBrains Mono'", "monospace"],
       },
+
       fontSize: {
-        'display': ['clamp(4rem, 10vw, 9rem)', { lineHeight: '0.9', letterSpacing: '-0.04em', fontWeight: '700' }],
-        '7xl': ['4.5rem', { lineHeight: '1', letterSpacing: '-0.03em' }],
-        '8xl': ['6rem', { lineHeight: '0.95', letterSpacing: '-0.04em' }],
-        '9xl': ['8rem', { lineHeight: '0.9', letterSpacing: '-0.05em' }],
+        'display': ['clamp(4rem, 10vw, 9rem)', { lineHeight: '0.9', letterSpacing: '-0.04em' }],
+        '7xl': ['4.5rem', { lineHeight: '1',    letterSpacing: '-0.03em' }],
+        '8xl': ['6rem',   { lineHeight: '0.95', letterSpacing: '-0.04em' }],
+        '9xl': ['8rem',   { lineHeight: '0.9',  letterSpacing: '-0.05em' }],
       },
+
       spacing: {
-        'section': '8rem',
+        section:    '8rem',
         'section-sm': '5rem',
       },
-      animation: {
-        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'blob': 'blob 7s infinite',
-        'shimmer': 'shimmer 2s linear infinite',
-        'gradient-x': 'gradient-x 8s ease infinite',
-        'fade-up': 'fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-        'glow-pulse': 'glow-pulse 3s ease-in-out infinite',
-      },
-      keyframes: {
-        blob: {
-          "0%": { transform: "translate(0px, 0px) scale(1)" },
-          "33%": { transform: "translate(30px, -50px) scale(1.1)" },
-          "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
-          "100%": { transform: "translate(0px, 0px) scale(1)" },
-        },
-        shimmer: {
-          from: { backgroundPosition: "0 0" },
-          to: { backgroundPosition: "-200% 0" },
-        },
-        'gradient-x': {
-          '0%, 100%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
-        },
-        'fade-up': {
-          from: { opacity: '0', transform: 'translateY(40px)' },
-          to: { opacity: '1', transform: 'translateY(0)' },
-        },
-        'glow-pulse': {
-          '0%, 100%': { opacity: '0.4' },
-          '50%': { opacity: '0.8' },
-        },
-      },
-      backgroundSize: {
-        '300%': '300%',
-      },
+
       transitionTimingFunction: {
         'expo-out': 'cubic-bezier(0.16, 1, 0.3, 1)',
-        'spring': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+        'spring':   'cubic-bezier(0.34, 1.56, 0.64, 1)',
       },
+
       boxShadow: {
-        'glow-sm': '0 0 20px rgba(0, 243, 255, 0.15)',
-        'glow': '0 0 40px rgba(0, 243, 255, 0.2)',
-        'glow-lg': '0 0 80px rgba(0, 243, 255, 0.25)',
-        'glow-violet': '0 0 40px rgba(157, 0, 255, 0.2)',
-        'inner-light': 'inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+        'inner-light': 'inset 0 1px 0 rgba(255, 255, 255, 0.08)',
       },
-      backdropBlur: {
-        '4xl': '72px',
-      }
     }
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 }

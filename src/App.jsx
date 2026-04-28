@@ -1,36 +1,27 @@
-import React from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Experience from '@/components/Experience';
+import Index from '@/components/Index';
+import Now from '@/components/Now';
 import Projects from '@/components/Projects';
-import Skills from '@/components/Skills';
-import Testimonials from '@/components/Testimonials';
+import Stack from '@/components/Stack';
 import Blog from '@/components/Blog';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import Starfield from '@/components/Starfield';
 
 function App() {
   return (
-    <div className="min-h-screen text-white selection:bg-neon-cyan selection:text-obsidian font-sans relative overflow-hidden">
-      {/* Starfield Background */}
-      <Starfield />
-
-      <div className="relative z-10">
-        <Navbar />
-        <main>
-          <Hero />
-          <About />
-          <Experience />
-          <Projects />
-          <Skills />
-          <Testimonials />
-          <Blog />
-          <Contact />
-        </main>
-        <Footer />
-      </div>
+    <div className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-accent-ink">
+      <Navbar />
+      <main className="relative">
+        <Hero />
+        <Index />
+        <Now />
+        <Projects />
+        <Stack />
+        <Blog />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }

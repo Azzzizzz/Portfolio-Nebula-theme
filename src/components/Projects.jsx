@@ -1,123 +1,86 @@
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Github } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { projects } from '@/constants';
+import { featuredCase } from '@/constants';
 
-const ProjectCard = ({ project, index }) => {
-    const [isHovered, setIsHovered] = useState(false);
+const EASE = [0.16, 1, 0.3, 1];
 
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-            className="group relative w-full cursor-pointer"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+export default function Projects() {
+  const c = featuredCase;
+  const MotionDiv = motion.div;
+
+  return (
+    <section id="work" className="py-24 md:py-32">
+      <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
+        <MotionDiv
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.7, ease: EASE }}
+          className="mb-16"
         >
-            <div className="relative overflow-hidden rounded-2xl aspect-[16/9] bg-white/5 border border-white/10">
-                {/* Image/Video Background */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
+          <span className="label-mono">02 / Selected Work</span>
+          <h2 className="mt-4 font-display text-[3rem] leading-[0.98] tracking-[-0.04em] md:text-[4.6rem]">
+            Three systems.
+            <br />
+            Three 0→1 stories.
+          </h2>
+        </MotionDiv>
 
-                {project.video ? (
-                    <video
-                        src={project.video}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                ) : (
-                    <motion.img
-                        src={project.image}
-                        alt={project.title}
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                )}
+        <article className="border-t border-white/[0.06] pt-10 md:pt-12">
+          <header className="mb-10 flex flex-col gap-4 md:flex-row md:items-baseline md:justify-between">
+            <h3 className="font-display text-[2.5rem] leading-none tracking-[-0.04em] md:text-[4rem]">
+              <span className="label-mono accent-text mr-4 inline-block align-middle">
+                {c.num}
+              </span>
+              {c.title}
+            </h3>
+            <span className="label-mono">{c.period}</span>
+          </header>
 
-                {/* Content Overlay */}
-                <div className="absolute inset-0 z-20 p-8 flex flex-col justify-between">
-                    <div className="flex justify-between items-start">
-                        <span className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-xs font-medium text-white border border-white/10">
-                            {project.category}
-                        </span>
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: isHovered ? 1 : 0, scale: isHovered ? 1 : 0.8 }}
-                            className="flex gap-2"
-                        >
-                            <a href={project.links.github} className="p-2 rounded-full bg-white text-black hover:bg-primary transition-colors">
-                                <Github className="w-4 h-4" />
-                            </a>
-                            <a href={project.links.demo} className="p-2 rounded-full bg-white text-black hover:bg-primary transition-colors">
-                                <ArrowUpRight className="w-4 h-4" />
-                            </a>
-                        </motion.div>
-                    </div>
-
-                    <div>
-                        <h3 className="text-3xl font-syne font-bold text-white mb-2 group-hover:text-primary transition-colors duration-300">
-                            {project.title}
-                        </h3>
-                        <div className="overflow-hidden">
-                            <motion.p
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: isHovered ? "auto" : 0, opacity: isHovered ? 1 : 0 }}
-                                className="text-gray-300 mb-4"
-                            >
-                                {project.description}
-                            </motion.p>
-                        </div>
-                        <div className="flex flex-wrap gap-2">
-                            {project.tags.map((tag) => (
-                                <span key={tag} className="text-xs text-gray-400 font-mono">
-                                    #{tag}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-                </div>
+          <dl className="mb-12 grid gap-6 md:grid-cols-3">
+            <div>
+              <dt className="label-mono mb-2">Started from</dt>
+              <dd className="text-base leading-7 text-ink-muted">{c.context.startedFrom}</dd>
             </div>
-        </motion.div>
-    );
-};
-
-const Projects = () => {
-    return (
-        <section id="projects" className="py-32 relative">
-            <div className="container mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="mb-20 flex flex-col md:flex-row justify-between items-end gap-8"
-                >
-                    <div>
-                        <h2 className="text-5xl md:text-7xl font-syne font-bold mb-6">
-                            Selected <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                                Works
-                            </span>
-                        </h2>
-                    </div>
-                    <p className="text-gray-400 max-w-md text-lg pb-2">
-                        A collection of digital experiences crafted with precision and passion.
-                    </p>
-                </motion.div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {projects.map((project, index) => (
-                        <div key={project.id} className={cn(index === 2 ? "md:col-span-2" : "")}>
-                            <ProjectCard project={project} index={index} />
-                        </div>
-                    ))}
-                </div>
+            <div>
+              <dt className="label-mono mb-2">Ended at</dt>
+              <dd className="text-base leading-7 text-ink-muted">{c.context.endedAt}</dd>
             </div>
-        </section>
-    );
-};
+            <div>
+              <dt className="label-mono mb-2">My role</dt>
+              <dd className="text-base leading-7 text-ink-muted">{c.context.myRole}</dd>
+            </div>
+          </dl>
 
-export default Projects;
+          <div className="mb-12 grid gap-10 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] md:gap-12">
+            <div>
+              <p className="label-mono mb-4">The problem</p>
+              <p className="text-lg leading-8 text-ink-muted">{c.problem}</p>
+              <p className="label-mono mb-4 mt-8">The move</p>
+              <p className="text-lg leading-8 text-ink-muted">{c.move}</p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-px border border-white/[0.06] bg-white/[0.06] self-start">
+              {c.numbers.map((item) => (
+                <div key={item.label} className="bg-background p-6 md:p-8">
+                  <div className="font-display text-[2.4rem] leading-none text-[hsl(var(--accent))] md:text-[3.2rem]">
+                    {item.value}
+                  </div>
+                  <div className="label-mono mt-3">{item.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            <span className="label-mono mr-2">Stack</span>
+            {c.stack.map((item) => (
+              <span key={item} className="tech-chip">
+                {item}
+              </span>
+            ))}
+          </div>
+        </article>
+      </div>
+    </section>
+  );
+}
