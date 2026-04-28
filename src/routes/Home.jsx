@@ -1,4 +1,6 @@
 import Hero from '@/components/Hero';
+import About from '@/components/About';
+import Skills from '@/components/Skills';
 import Index from '@/components/Index';
 import Now from '@/components/Now';
 import Projects from '@/components/Projects';
@@ -12,6 +14,8 @@ export default function Home() {
     <>
       <main className="relative">
         <Hero />
+        <About />
+        <Skills />
         <Index />
         <Now />
         <Projects />

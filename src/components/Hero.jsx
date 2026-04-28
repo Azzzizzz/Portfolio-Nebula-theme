@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { personalInfo } from '@/constants';
+import { heroContent, personalInfo } from '@/constants';
 
 const HERO_SEQUENCE = ['one', 'a hundred thousand', 'one', 'a hundred thousand'];
 const EASE = [0.16, 1, 0.3, 1];
@@ -65,48 +65,77 @@ export default function Hero() {
       </div>
 
       <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-5 py-20 md:px-8">
-        <MotionH1
-          initial={{ opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.05, ease: EASE }}
-          className="font-display text-[3.3rem] leading-[0.96] tracking-[-0.05em] text-foreground sm:text-[4.2rem] md:text-[6rem] lg:text-[8rem]"
-        >
-          I take products
-          <br />
-          from zero
-          <br />
-          to{' '}
-          <AnimatePresence mode="wait">
-            <motion.span
-              key={value}
-              initial={reducedMotion ? false : { opacity: 0, y: 16 }}
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-end">
+          <div>
+            <MotionDiv
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={reducedMotion ? undefined : { opacity: 0, y: -12 }}
-              transition={{ duration: 0.55, ease: EASE }}
-              className={struck ? 'line-through decoration-2' : 'accent-text italic'}
+              transition={{ duration: 0.7, ease: EASE }}
+              className="mb-6"
             >
-              {value}
-            </motion.span>
-          </AnimatePresence>
-          .
-        </MotionH1>
+              <span className="label-mono accent-text">{heroContent.eyebrow}</span>
+            </MotionDiv>
 
-        <MotionDiv
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15, ease: EASE }}
-          className="mt-12 max-w-3xl"
-        >
-          <div className="mb-4 h-px w-16 bg-[hsl(var(--accent))]" />
-          <p className="label-mono leading-7 md:leading-8">
-            Full-stack engineer · backend-heavy · production AI
-            <br />
-            Hyderabad · 4+ yrs · open to senior / staff roles
-          </p>
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-ink-muted">
-            {personalInfo.bio.longDescription}
-          </p>
-        </MotionDiv>
+            <MotionH1
+              initial={{ opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.05, ease: EASE }}
+              className="font-display text-[3.3rem] leading-[0.96] tracking-[-0.05em] text-foreground sm:text-[4.2rem] md:text-[6rem] lg:text-[8rem]"
+            >
+              I take products
+              <br />
+              from zero
+              <br />
+              to{' '}
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={value}
+                  initial={reducedMotion ? false : { opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={reducedMotion ? undefined : { opacity: 0, y: -12 }}
+                  transition={{ duration: 0.55, ease: EASE }}
+                  className={struck ? 'line-through decoration-2' : 'accent-text italic'}
+                >
+                  {value}
+                </motion.span>
+              </AnimatePresence>
+              .
+            </MotionH1>
+
+            <MotionDiv
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.15, ease: EASE }}
+              className="mt-10 max-w-3xl"
+            >
+              <div className="mb-4 h-px w-16 bg-[hsl(var(--accent))]" />
+              <p className="label-mono leading-7 md:leading-8">
+                Full-stack engineer · backend-heavy · production AI
+                <br />
+                Hyderabad · 4+ yrs · open to senior / staff roles
+              </p>
+              <p className="mt-8 max-w-2xl text-lg leading-8 text-ink-muted">
+                {heroContent.summary}
+              </p>
+            </MotionDiv>
+          </div>
+
+          <MotionDiv
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.85, delay: 0.25, ease: EASE }}
+            className="grid gap-px border border-white/[0.08] bg-white/[0.06]"
+          >
+            {heroContent.proof.map((item) => (
+              <div key={item.label} className="bg-background px-6 py-6">
+                <p className="font-display text-[2.4rem] leading-none text-[hsl(var(--accent))] md:text-[3rem]">
+                  {item.value}
+                </p>
+                <p className="label-mono mt-3">{item.label}</p>
+              </div>
+            ))}
+          </MotionDiv>
+        </div>
       </div>
 
       <div className="px-5 pb-8 md:px-8">

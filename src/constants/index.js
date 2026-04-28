@@ -23,12 +23,66 @@ export const personalInfo = {
     'open to senior backend & full-stack roles · replies within 24h',
 };
 
+export const heroContent = {
+  eyebrow: 'Senior software engineer · Hyderabad',
+  summary:
+    'Backend-heavy full-stack engineer focused on systems that survive real users, real traffic, and real business rules.',
+  proof: [
+    { value: '100K+', label: 'users supported' },
+    { value: '10K', label: 'socket connections / pod' },
+    { value: '4+', label: 'years shipping' },
+  ],
+};
+
 export const navLinks = [
+  { name: 'About', href: '#about' },
+  { name: 'Skills', href: '#skills' },
   { name: 'Now', href: '#now' },
   { name: 'Work', href: '#work' },
   { name: 'Stack', href: '#stack' },
   { name: 'Notes', href: '#notes' },
   { name: 'Contact', href: '#contact' },
+];
+
+export const aboutHighlights = [
+  {
+    label: 'How I grew into this shape',
+    detail: 'I started on frontend product delivery, then moved into backend ownership when the harder system problems showed up.',
+  },
+  {
+    label: 'What I optimize for',
+    detail: 'Clear service boundaries, honest observability, and product decisions that do not collapse under scale or maintenance.',
+  },
+  {
+    label: 'Where I go deepest',
+    detail: 'Identity, notifications, real-time infrastructure, retrieval systems, and the operational layer around them.',
+  },
+];
+
+export const aboutContent = {
+  lead:
+    'I am strongest when a product is moving fast and the underlying system still has to stay disciplined. That usually means making architecture decisions early, living with the operational consequences, and refining the design under actual traffic instead of hypothetical elegance.',
+  support:
+    'The pattern across Topica, NativeX, and Esuahi is not a stack preference. It is end-to-end ownership: understanding the product, shaping the service boundaries, shipping the implementation, and then debugging the real-world behavior when usage stops being polite.',
+};
+
+export const skillCategories = [
+  {
+    title: 'Backend & Architecture',
+    skills: ['NestJS', 'Node.js', 'GraphQL', 'Kafka', 'Redis', 'PostgreSQL', 'MongoDB', 'Microservices'],
+  },
+  {
+    title: 'Cloud & Delivery',
+    skills: ['Azure AKS', 'Docker', 'Kubernetes', 'Azure DevOps', 'CI/CD', 'Key Vault', 'Nginx'],
+  },
+  {
+    title: 'AI & Data',
+    skills: ['OpenAI', 'Claude', 'RAG', 'Vector Search', 'Prompt Systems', 'Python', 'MCP'],
+  },
+  {
+    title: 'Frontend Foundation',
+    skills: ['React', 'Next.js', 'Tailwind', 'MUI', 'Product UI', 'Design Systems'],
+  },
 ];
 
 export const indexEntries = [
