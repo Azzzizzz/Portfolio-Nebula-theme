@@ -15,9 +15,9 @@ Source of truth for scope: [EXECUTION_PLAN.md](./EXECUTION_PLAN.md)
 
 | Item | Status |
 | --- | --- |
-| Current phase | Phase 1 implementation complete, verification partially pending |
-| Overall state | 🟨 New Phase 1 architecture is built locally. Remaining gaps are deployment/manual verification items. |
-| Active modified files | Phase 1 rewrite spans app shell, sections, config, and contact API |
+| Current phase | Phase 2 started |
+| Overall state | 🟨 Phase 1 code is in place and Phase 2 content work is underway. Remaining Phase 1 gaps are deployment/manual verification items. |
+| Active modified files | Phase 2 work currently touches case studies, stack storytelling, notes, and `index.html` |
 | Current branch | `revamp-v1` |
 
 ## Phase 1
@@ -50,7 +50,14 @@ Source of truth for scope: [EXECUTION_PLAN.md](./EXECUTION_PLAN.md)
 
 | ID | Task Group | Status | Notes |
 | --- | --- | --- | --- |
-| `P2` | Phase 2 tasks | 🟥 Not Started | No Phase 2 execution has started yet. |
+| `P2-T1` | TikMe Case Study + Animated Architecture Diagram | 🟩 Done | Added TikMe case-study content and a scroll-driven architecture SVG in `src/components/cases/`. |
+| `P2-T2` | LLM Eval + RAG Merged Case Study | 🟩 Done | Added AI Layer case study with rubric prompt block, metrics strip, and grounded-answer typewriter. |
+| `P2-T3` | Build Fused Stack Section | 🟩 Done | Stack section now carries timeline markers and clearer T-shape framing. |
+| `P2-T4` | Field Notes (single-column list) | 🟩 Done | Notes section stays image-free and card-free, with simple editorial metadata rows. |
+| `P2-T5` | Custom Cursor | 🟥 Not Started | Not implemented yet. |
+| `P2-T6` | View-Source Easter Egg | 🟩 Done | Comment added to `index.html` and confirmed in built `dist/index.html`. |
+| `P2-T7` | Lighthouse Pass to 100/100/100/100 | 🟥 Not Started | No Phase 2 Lighthouse optimization pass yet. Current JS bundle is still above the target. |
+| `P2-GATE` | Phase 2 verification gate | 🟥 Not Done | Manual visual/perf checks and remaining tasks are still open. |
 
 ## Phase 3
 
@@ -65,3 +72,4 @@ Source of truth for scope: [EXECUTION_PLAN.md](./EXECUTION_PLAN.md)
 | Deploy | Add `RESEND_API_KEY` to Vercel preview + production before testing the contact form live. |
 | Manual QA | `Docs/screenshots/after-phase-1/` and `Docs/phase-1-lighthouse.html` still need browser-based capture. |
 | Build artifact | `Docs/phase-1-build.txt` has been generated from the current local build. |
+| Phase 2 perf | Current built JS is about `126.99 kB` gzipped, so the later Phase 2 performance pass is still required. |

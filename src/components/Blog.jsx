@@ -18,7 +18,10 @@ export default function Blog() {
               key={post.id}
               className="grid gap-5 border-b border-white/[0.06] py-8 last:border-b-0 md:grid-cols-[180px_minmax(0,1fr)_160px]"
             >
-              <div className="label-mono">{post.category}</div>
+              <div>
+                <div className="label-mono">{post.category}</div>
+                <div className="label-mono mt-2 opacity-70">{post.meta}</div>
+              </div>
               <div>
                 <h3 className="font-display text-[2rem] leading-tight tracking-[-0.03em]">
                   {post.title}

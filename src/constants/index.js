@@ -95,6 +95,7 @@ export const featuredCase = {
   num: '01',
   title: 'NativeX',
   period: '2023 — 2025',
+  variant: 'text-metrics',
   context: {
     startedFrom: 'Launch-day traffic. Near-zero paid users.',
     endedAt:
@@ -114,21 +115,93 @@ export const featuredCase = {
   stack: ['NestJS', 'Kafka', 'Redis', 'PostgreSQL', 'MongoDB', 'GraphQL', 'Next.js'],
 };
 
+export const tikmeCase = {
+  id: 'tikme',
+  num: '02',
+  title: 'TikMe',
+  period: '2025 — 2026',
+  variant: 'diagram',
+  context: {
+    startedFrom: 'Empty repo. Legacy business logic, no platform.',
+    endedAt: 'Six services in production. 10K concurrent WebSocket connections per pod.',
+    myRole: 'Backend architect across Auth, Chat, Media, Real-Time, and Evaluation.',
+  },
+  problem:
+    'Esuahi needed to digitize a 25-year-old education and workforce operation without treating software as a side project. The first version had to land with clear boundaries, policy enforcement, and real-time behavior from day one.',
+  move:
+    'I designed the service boundaries, drove Apollo Federation at the edge, used Kafka as the event backbone, kept sessions hot with Redis, and built the real-time service to survive 10K concurrent socket connections per pod.',
+  numbers: [
+    { value: '10K', label: 'WebSocket connections / pod' },
+    { value: '90%', label: 'DB load reduced via hybrid sessions' },
+    { value: '6', label: 'production services' },
+    { value: '25 yrs', label: 'legacy operation digitized' },
+  ],
+  stack: ['NestJS', 'Apollo Federation', 'Kafka', 'Redis', 'PostgreSQL', 'Cerbos', 'Azure AKS'],
+};
+
+export const aiLayerCase = {
+  id: 'ai-layer',
+  num: '03',
+  title: 'The AI Layer',
+  period: '2025 — 2026',
+  variant: 'ai',
+  context: {
+    startedFrom: 'Static rubric logic and disconnected internal knowledge.',
+    endedAt: 'Provider-routed evaluations and retrieval-backed answers in production.',
+    myRole: 'Designed the evaluation engine and the retrieval orchestration around it.',
+  },
+  problem:
+    'AI features become expensive theater if prompt logic lives in code and internal knowledge stays trapped inside tools nobody can search. The system needed to be editable, measurable, and grounded.',
+  move:
+    'I separated prompt templates from deployments, routed requests between OpenAI and Claude, tracked cost on every call, and added a retrieval layer over Jira and Confluence so answers could cite internal reality instead of model confidence.',
+  stack: ['OpenAI', 'Claude', 'MongoDB', 'Atlas Vector Search', 'NestJS', 'Python', 'MCP'],
+  evalMetrics: [
+    { label: 'Score', value: '7.2 / 10' },
+    { label: 'Cost', value: '$0.0043' },
+    { label: 'Latency', value: '1.8s' },
+  ],
+  promptSnippet: [
+    'system: Score the learner against CEFR speaking rubric.',
+    'rubric_id: oral-assessment-v3',
+    'criteria: fluency | pronunciation | grammar | coherence',
+    'return: score, rationale, improvement_steps',
+  ],
+  ragFlow: [
+    'Ingest Jira + Confluence pages',
+    'Chunk and embed into Atlas Vector Search',
+    'Retrieve top matches per question',
+    'Stream grounded answer with sources',
+  ],
+  answer:
+    'Cerbos gave us policy decisions as infrastructure rather than ad hoc conditionals. That mattered because each service could ask for an authorization decision without duplicating role logic.',
+  numbers: [
+    { value: '$5/mo', label: 'Phase 3 demo target' },
+    { value: '2', label: 'LLM providers routed' },
+    { value: '1', label: 'shared rubric engine' },
+    { value: 'live', label: 'streaming answers' },
+  ],
+};
+
+export const caseStudies = [featuredCase, tikmeCase, aiLayerCase];
+
 export const stackTimeline = [
   {
     company: 'Topica',
     period: '2021 — 2023',
     focus: 'Frontend roots in React, Next.js, and product delivery.',
+    marker: 'Frontend foundation',
   },
   {
     company: 'NativeX',
     period: '2023 — 2025',
     focus: 'Transitioned into backend ownership and scale work.',
+    marker: 'FE → BE transition',
   },
   {
     company: 'Esuahi / TikMe',
     period: '2025 — 2026',
     focus: 'Greenfield microservices, real-time systems, and production AI.',
+    marker: 'Architecture + AI depth',
   },
 ];
 
@@ -149,6 +222,7 @@ export const blogPosts = [
     status: 'DRAFTING',
     url: null,
     category: 'Systems',
+    meta: 'Drafting now',
   },
   {
     id: 2,
@@ -158,6 +232,7 @@ export const blogPosts = [
     status: 'DRAFTING',
     url: null,
     category: 'Security',
+    meta: 'Deep dive in progress',
   },
   {
     id: 3,
@@ -167,5 +242,6 @@ export const blogPosts = [
     status: 'DRAFTING',
     url: null,
     category: 'AI',
+    meta: 'RAG production notes',
   },
 ];

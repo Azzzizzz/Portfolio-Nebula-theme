@@ -29,6 +29,7 @@ export default function Stack() {
               className="bg-background p-6 md:p-8"
             >
               <p className="label-mono mb-3">{item.period}</p>
+              <span className="label-mono accent-text">{item.marker}</span>
               <h3 className="font-display text-[2rem] tracking-[-0.03em]">{item.company}</h3>
               <p className="mt-4 text-base leading-7 text-ink-muted">{item.focus}</p>
             </MotionDiv>
@@ -70,6 +71,9 @@ export default function Stack() {
           The shape is deliberate: frontend enough to ship the surface, backend deep
           enough to own the systems underneath, and increasingly comfortable with AI
           when it has to survive real users, budgets, and operational scrutiny.
+        </p>
+        <p className="label-mono mt-6">
+          T-shape: broad across product delivery, deepest in backend systems and AI infrastructure.
         </p>
       </div>
     </section>
