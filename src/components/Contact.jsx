@@ -1,149 +1,200 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Send, Mail, MapPin, Phone } from 'lucide-react';
-import { Button } from "@/components/ui/button";
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import { useState } from 'react';
+import { ArrowRight, Mail, MapPin } from 'lucide-react';
 import { personalInfo } from '@/constants';
 
-const Contact = () => {
-    const [formState, setFormState] = useState({
-        name: '',
-        email: '',
-        message: ''
-    });
+const EASE = [0.16, 1, 0.3, 1];
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle form submission logic here
-        console.log('Form submitted:', formState);
-        alert("Thank you for your message! This is a demo form.");
-        setFormState({ name: '', email: '', message: '' });
-    };
-
-    const handleChange = (e) => {
-        setFormState({
-            ...formState,
-            [e.target.name]: e.target.value
-        });
-    };
-
-    return (
-        <section id="contact" className="py-32 relative overflow-hidden">
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                    {/* Left Column: Contact Info */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <h2 className="text-5xl md:text-7xl font-syne font-bold mb-8 leading-tight">
-                            Let's Create <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                                Something Extraordinary
-                            </span>
-                        </h2>
-                        <p className="text-xl text-gray-300 font-light leading-relaxed mb-12 max-w-lg">
-                            Have a project in mind? Let's collaborate and build something that pushes the boundaries of digital design.
-                        </p>
-
-                        <div className="space-y-8">
-                            <div className="flex items-start gap-6 group">
-                                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm group-hover:bg-white/10 transition-colors duration-300">
-                                    <Mail className="w-6 h-6 text-primary" />
-                                </div>
-                                <div>
-                                    <h4 className="text-lg font-syne font-bold text-white mb-1">Email Me</h4>
-                                    <a href={personalInfo.social.find(s => s.name === "Email").url} className="text-gray-400 hover:text-white transition-colors">{personalInfo.email}</a>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start gap-6 group">
-                                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm group-hover:bg-white/10 transition-colors duration-300">
-                                    <MapPin className="w-6 h-6 text-secondary" />
-                                </div>
-                                <div>
-                                    <h4 className="text-lg font-syne font-bold text-white mb-1">Location</h4>
-                                    <p className="text-gray-400">{personalInfo.location}</p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start gap-6 group">
-                                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm group-hover:bg-white/10 transition-colors duration-300">
-                                    <Phone className="w-6 h-6 text-neon-cyan" />
-                                </div>
-                                <div>
-                                    <h4 className="text-lg font-syne font-bold text-white mb-1">Phone</h4>
-                                    <p className="text-gray-400">{personalInfo.phone}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    {/* Right Column: Contact Form */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="relative"
-                    >
-                        {/* Glow Effect */}
-                        <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-secondary/30 rounded-[2rem] blur-xl opacity-50" />
-
-                        <form onSubmit={handleSubmit} className="relative bg-black/40 backdrop-blur-2xl border border-white/10 rounded-[2rem] p-8 md:p-10 shadow-2xl space-y-6">
-                            <div className="space-y-2">
-                                <label htmlFor="name" className="text-sm font-medium text-gray-300 ml-1">Name</label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    value={formState.name}
-                                    onChange={handleChange}
-                                    className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all duration-300"
-                                    placeholder="John Doe"
-                                    required
-                                />
-                            </div>
-
-                            <div className="space-y-2">
-                                <label htmlFor="email" className="text-sm font-medium text-gray-300 ml-1">Email</label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    value={formState.email}
-                                    onChange={handleChange}
-                                    className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all duration-300"
-                                    placeholder="john@example.com"
-                                    required
-                                />
-                            </div>
-
-                            <div className="space-y-2">
-                                <label htmlFor="message" className="text-sm font-medium text-gray-300 ml-1">Message</label>
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    value={formState.message}
-                                    onChange={handleChange}
-                                    rows={4}
-                                    className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all duration-300 resize-none"
-                                    placeholder="Tell me about your project..."
-                                    required
-                                />
-                            </div>
-
-                            <Button type="submit" className="w-full bg-white text-black hover:bg-gray-200 rounded-xl py-6 font-syne font-bold text-lg transition-all duration-300 hover:scale-[1.02] mt-4">
-                                Send Message
-                                <Send className="w-5 h-5 ml-2" />
-                            </Button>
-                        </form>
-                    </motion.div>
-                </div>
-            </div>
-        </section>
-    );
+const INITIAL_FORM = {
+  name: '',
+  email: '',
+  message: '',
 };
 
-export default Contact;
+export default function Contact() {
+  const reducedMotion = useReducedMotion();
+  const [formState, setFormState] = useState(INITIAL_FORM);
+  const [status, setStatus] = useState('idle');
+  const [error, setError] = useState('');
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState((current) => ({ ...current, [name]: value }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setStatus('sending');
+    setError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formState),
+      });
+
+      if (!response.ok) {
+        const payload = await response.json().catch(() => ({}));
+        throw new Error(payload.error || 'send failed');
+      }
+
+      setStatus('sent');
+      setFormState(INITIAL_FORM);
+    } catch (submitError) {
+      setStatus('error');
+      setError(
+        submitError instanceof Error
+          ? submitError.message
+          : 'Unable to send right now.'
+      );
+    }
+  };
+
+  const emailLink = personalInfo.social.find((item) => item.name === 'Email')?.url;
+  const MotionDiv = motion.div;
+  const MotionForm = motion.form;
+
+  return (
+    <section id="contact" className="border-t border-white/[0.06] py-24 md:py-32">
+      <div className="mx-auto grid w-full max-w-6xl gap-14 px-5 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:px-8">
+        <div>
+          <span className="label-mono">05 / Contact</span>
+          <h2 className="mt-4 font-display text-[3rem] leading-[0.98] tracking-[-0.04em] md:text-[4.6rem]">
+            If the work maps
+            <br />
+            to what you need,
+            <br />
+            write.
+          </h2>
+          <p className="mt-8 max-w-xl text-lg leading-8 text-ink-muted">
+            I reply fast, I like concrete problems, and I would rather talk through
+            systems than rehearse portfolio adjectives.
+          </p>
+
+          <div className="mt-10 space-y-5">
+            <a
+              href={emailLink}
+              className="flex items-start gap-4 rounded-[1.4rem] border border-white/[0.08] bg-white/[0.03] px-5 py-5 transition-colors hover:bg-white/[0.05] focus-ring"
+            >
+              <Mail className="mt-1 h-5 w-5 text-[hsl(var(--accent))]" />
+              <div>
+                <p className="label-mono mb-1">Email</p>
+                <p className="text-base text-foreground">{personalInfo.email}</p>
+              </div>
+            </a>
+            <div className="flex items-start gap-4 rounded-[1.4rem] border border-white/[0.08] bg-white/[0.03] px-5 py-5">
+              <MapPin className="mt-1 h-5 w-5 text-[hsl(var(--accent))]" />
+              <div>
+                <p className="label-mono mb-1">Location</p>
+                <p className="text-base text-foreground">{personalInfo.location}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <AnimatePresence mode="wait">
+            {status === 'sent' ? (
+              <MotionDiv
+                key="sent"
+                initial={reducedMotion ? false : { opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={reducedMotion ? undefined : { opacity: 0, y: -18 }}
+                transition={{ duration: reducedMotion ? 0 : 0.45, ease: EASE }}
+                className="rounded-[1.9rem] border border-white/[0.08] bg-white/[0.03] p-8 md:p-10"
+              >
+                <p className="label-mono accent-text">Message received</p>
+                <h3 className="mt-4 font-display text-[2.6rem] leading-none tracking-[-0.04em] md:text-[3.5rem]">
+                  Got it.
+                </h3>
+                <p className="mt-5 max-w-lg text-lg leading-8 text-ink-muted">
+                  I reply within 24 hours. If the brief is concrete, even better.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setStatus('idle')}
+                  className="label-mono mt-8 rounded-sm text-foreground transition-colors hover:text-[hsl(var(--accent))] focus-ring"
+                >
+                  Send another note
+                </button>
+              </MotionDiv>
+            ) : (
+              <MotionForm
+                key="form"
+                initial={reducedMotion ? false : { opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={reducedMotion ? undefined : { opacity: 0, y: -18 }}
+                transition={{ duration: reducedMotion ? 0 : 0.45, ease: EASE }}
+                onSubmit={handleSubmit}
+                className="space-y-6 rounded-[1.9rem] border border-white/[0.08] bg-white/[0.03] p-8 md:p-10"
+              >
+                <div>
+                  <label htmlFor="name" className="label-mono mb-3 block">
+                    Name
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    value={formState.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-2xl border border-white/[0.08] bg-background px-5 py-4 text-base text-foreground placeholder:text-ink-faint focus-ring"
+                    placeholder="Your name"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="label-mono mb-3 block">
+                    Email
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formState.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-2xl border border-white/[0.08] bg-background px-5 py-4 text-base text-foreground placeholder:text-ink-faint focus-ring"
+                    placeholder="you@company.com"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="label-mono mb-3 block">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formState.message}
+                    onChange={handleChange}
+                    required
+                    rows={6}
+                    className="w-full resize-none rounded-2xl border border-white/[0.08] bg-background px-5 py-4 text-base text-foreground placeholder:text-ink-faint focus-ring"
+                    placeholder="Role, problem, timeline, or the specific kind of systems work you need."
+                  />
+                </div>
+
+                {status === 'error' ? (
+                  <p className="label-mono text-[hsl(var(--accent))]">
+                    Unable to send: {error}
+                  </p>
+                ) : null}
+
+                <button
+                  type="submit"
+                  disabled={status === 'sending'}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[hsl(var(--accent))] px-6 py-4 text-sm font-medium text-[hsl(var(--accent-ink))] transition-transform duration-300 hover:-translate-y-0.5 disabled:cursor-wait disabled:opacity-80"
+                >
+                  {status === 'sending' ? 'Sending...' : 'Send message'}
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </MotionForm>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
+    </section>
+  );
+}

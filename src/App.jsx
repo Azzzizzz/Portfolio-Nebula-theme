@@ -1,36 +1,21 @@
-import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Experience from '@/components/Experience';
-import Projects from '@/components/Projects';
-import Skills from '@/components/Skills';
-import Testimonials from '@/components/Testimonials';
-import Blog from '@/components/Blog';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
-import Starfield from '@/components/Starfield';
+import Home from '@/routes/Home';
+import Case from '@/routes/Case';
 
 function App() {
-  return (
-    <div className="min-h-screen text-white selection:bg-neon-cyan selection:text-obsidian font-sans relative overflow-hidden">
-      {/* Starfield Background */}
-      <Starfield />
+  const location = useLocation();
+  const showNavbar = !location.pathname.startsWith('/case/');
 
-      <div className="relative z-10">
-        <Navbar />
-        <main>
-          <Hero />
-          <About />
-          <Experience />
-          <Projects />
-          <Skills />
-          <Testimonials />
-          <Blog />
-          <Contact />
-        </main>
-        <Footer />
-      </div>
+  return (
+    <div className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-accent-ink">
+      {showNavbar ? <Navbar /> : null}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/case/:slug" element={<Case />} />
+      </Routes>
+      <Analytics />
     </div>
   );
 }
