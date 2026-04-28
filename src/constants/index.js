@@ -1,12 +1,9 @@
 import {
-    Code2,
-    Palette,
-    Globe,
-    Layout,
     Server,
     Terminal,
     Database,
     Cpu,
+    Bot,
     Send,
     Mail,
     MapPin,
@@ -18,14 +15,14 @@ import {
 
 export const personalInfo = {
     name: "Syed Abdul Aziz",
-    role: "Software Engineer",
+    role: "Senior Software Engineer",
     email: "syedaziz9999@gmail.com",
     phone: "+91 8328082973",
     location: "Hyderabad, India",
     bio: {
-        title: "Building Scalable Backend Systems",
-        description: "Software Engineer with 4+ years of experience designing and building scalable backend systems for learning platforms.",
-        longDescription: "I specialize in backend architecture and service development. From transforming offline LMS into production-ready online platforms to supporting high-traffic production systems, I focus on scalability, reliability, and performance. My expertise includes distributed systems, event-driven architecture, and secure authentication."
+        title: "Distributed Systems & AI Backend Engineer",
+        description: "Senior Software Engineer with 4+ years building distributed, event-driven backend systems for learning platforms serving 100K+ users — now bridging backend architecture with production AI/LLM integration.",
+        longDescription: "I specialize in designing and owning microservices end-to-end — from authentication and real-time WebSocket infrastructure to Kafka-based event pipelines and AI evaluation engines. At Esuahi, I led the greenfield backend architecture for a 25-year-old education company's digital transformation. At NativeX, I scaled the platform from zero to 100K+ users. I now integrate LLMs (OpenAI, Claude) into production systems — building RAG pipelines, provider-abstracted evaluation engines with cost tracking, and semantic search over enterprise knowledge bases."
     },
     social: [
         { name: "Github", icon: Github, url: "https://github.com/StartDust" },
@@ -47,69 +44,69 @@ export const navLinks = [
 
 export const stats = [
     { label: 'Years Experience', value: '4+' },
-    { label: 'Projects Completed', value: '20+' },
+    { label: 'Services Owned E2E', value: '6+' },
     { label: 'Users Served', value: '100K+' },
 ];
 
 export const aboutHighlights = [
-    { icon: Server, label: "Backend Systems", color: "text-primary" },
-    { icon: Database, label: "Scalable Arch", color: "text-secondary" },
-    { icon: Globe, label: "Distributed Teams", color: "text-neon-cyan" }
+    { icon: Server, label: "Distributed Systems", color: "text-primary" },
+    { icon: Database, label: "Event-Driven Arch", color: "text-secondary" },
+    { icon: Bot, label: "AI / LLM Systems", color: "text-neon-cyan" }
 ];
 
 export const experiences = [
     {
         id: 1,
         role: "Senior Software Engineer",
-        company: "ESUHAI (via GoEnglishX - Payroll)",
-        period: "Jul 2025 – Present",
-        description: "Leading backend architecture to transform an offline LMS into a scalable online platform. Architected services from scratch, owning Authentication and Media services. Designed secure auth systems and scalable media services using Azure Blob Storage.",
-        skills: ["Backend Architecture", "Authentication", "Azure Blob Storage", "Kafka", "Redis"]
+        company: "Esuahi Co., Ltd. (via GoEnglishX)",
+        period: "Jul 2025 – Mar 2026",
+        description: "Led backend architecture for TikMe — a greenfield NestJS microservices platform to digitize Esuahi's 25-year-old education and workforce operations onto Azure AKS. Owned end-to-end development of Auth, Media, Chat, and Real-Time services. Built a WebSocket service handling 10K concurrent connections per pod. Reduced DB load 90% via hybrid Redis/PostgreSQL session storage. Implemented a provider-abstracted LLM evaluation engine (Claude + OpenAI) with dynamic prompt templates and per-call cost tracking, and a RAG search system over Jira/Confluence using GPT-4o streaming.",
+        skills: ["NestJS", "Azure AKS", "Kafka", "Redis", "WebSockets", "Apollo Federation", "Cerbos", "Claude API", "OpenAI", "RAG Pipelines", "Kubernetes"]
     },
     {
         id: 2,
-        role: "Software Engineer II",
-        company: "NativeX (via GoEnglishX - Payroll)",
+        role: "Software Engineer → Software Engineer II",
+        company: "NativeX Edtech (via GoEnglishX)",
         period: "Apr 2023 – Jun 2025",
-        description: "Contributed to production systems for an English learning platform serving 100K+ users. Progressed from frontend to backend ownership. Designed notification systems and workflow engines for paid users.",
-        skills: ["Node.js", "Kafka", "Redis", "System Design", "Microservices"]
+        description: "Joined during the product's launch phase and grew into full backend ownership of Identity, Wallet, Scheduling, and Notification services. Designed a high-throughput Kafka notification pipeline for 5K+ paid users with a Redis token bucket rate limiter (500 notifications/min) and idempotent delivery. Helped scale the platform from zero to 100K+ trial users. Reduced logging costs by ~25% through targeted observability improvements. Awarded Best Stand-alone Remote Contributor, 2023.",
+        skills: ["NestJS", "Node.js", "Kafka", "Redis", "PostgreSQL", "MongoDB", "GraphQL", "Next.js", "Docker", "Jest"]
     },
     {
         id: 3,
         role: "Software Engineer",
-        company: "Topica (via Skuad - Payroll)",
+        company: "Topica Edtech Group (via Skuad)",
         period: "Nov 2021 – Mar 2023",
-        description: "Built responsive frontend components for Edumall and NativeX. Collaborated with cross-functional remote teams across India and Vietnam.",
-        skills: ["React.js", "Frontend", "Agile", "Remote Collaboration"]
+        description: "Joined as a frontend intern and converted to full-time within three months based on performance. Built responsive, reusable frontend components for Edumall (an Udemy-like platform) and early NativeX learning flows — interactive question types, live session interfaces, and progress dashboards. Collaborated with cross-functional remote teams across India and Vietnam in Agile sprints and code reviews.",
+        skills: ["React.js", "Next.js", "TypeScript", "Apollo GraphQL", "MUI", "CSS3"]
     }
 ];
 
 export const projects = [
     {
         id: 1,
-        title: "Nebula Dashboard",
-        category: "FinTech",
-        description: "Real-time crypto analytics with interactive D3.js visualizations.",
-        tags: ["React", "D3.js", "WebSocket"],
-        image: "https://images.unsplash.com/photo-1642104704074-907c0698cbd9?q=80&w=2532&auto=format&fit=crop",
+        title: "TikMe — Microservices Platform",
+        category: "EdTech / Enterprise",
+        description: "Greenfield NestJS microservices backend built on Azure AKS to digitize Esuahi's 25-year-old education and workforce operations. Architected Auth, Chat, Media, Evaluation, and Real-Time services connected via Apollo Federation Gateway, Kafka event bus, and Cerbos policy-based RBAC. WebSocket service supports 10K connections per pod.",
+        tags: ["NestJS", "Azure AKS", "Kafka", "Apollo Federation", "Cerbos", "Redis", "WebSockets"],
+        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2068&auto=format&fit=crop",
         links: { demo: "#", github: "#" }
     },
     {
         id: 2,
-        title: "Aether Chat",
-        category: "Communication",
-        description: "End-to-end encrypted messaging with a focus on privacy.",
-        tags: ["Next.js", "Socket.io", "Redis"],
-        image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=2574&auto=format&fit=crop",
+        title: "LLM Evaluation Engine",
+        category: "AI / EdTech",
+        description: "Provider-abstracted evaluation engine powering oral assessment scoring at Esuahi. Integrates Azure Speech SDK for STT transcription and Claude/OpenAI for rubric-based qualitative feedback. Dynamic prompt templates stored in MongoDB — non-engineers update rubrics without code deployment. Tracks per-call token counts and dollar cost to MongoDB.",
+        tags: ["Claude API", "OpenAI", "Azure Speech SDK", "NestJS", "MongoDB", "Kafka"],
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2065&auto=format&fit=crop",
         links: { demo: "#", github: "#" }
     },
     {
         id: 3,
-        title: "Void Commerce",
-        category: "E-Commerce",
-        description: "Headless e-commerce starter kit for high-performance stores.",
-        tags: ["Gatsby", "Shopify API", "GraphQL"],
-        image: "https://plus.unsplash.com/premium_photo-1720503965220-10ea698bf0aa?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        title: "RAG Internal Search System",
+        category: "AI / Internal Tooling",
+        description: "Enterprise-grade semantic search over Jira and Confluence for engineering teams. Documents are chunked, embedded via OpenAI, and stored in MongoDB Atlas Vector Search. Queries return GPT-4o streaming answers with source attribution. Built on a MCP-based multi-source architecture in Python.",
+        tags: ["Python", "OpenAI", "MongoDB Atlas", "Vector Search", "GPT-4o Streaming", "MCP"],
+        image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2070&auto=format&fit=crop",
         links: { demo: "#", github: "#" }
     }
 ];
@@ -118,43 +115,43 @@ export const skillCategories = [
     {
         title: "Backend & Architecture",
         icon: Server,
-        description: "Designing scalable, distributed, and secure server-side systems.",
-        skills: ["Node.js", "NestJS", "Microservices", "Kafka", "Redis", "PostgreSQL", "MongoDB", "System Design"]
-    },
-    {
-        title: "Frontend Engineering",
-        icon: Layout,
-        description: "Building immersive, responsive, and performant user interfaces.",
-        skills: ["React.js", "Next.js", "TypeScript", "Material UI", "Tailwind CSS"]
+        description: "Designing scalable distributed systems, event-driven microservices, and secure real-time infrastructure.",
+        skills: ["NestJS", "Node.js", "TypeScript", "GraphQL (Apollo Federation)", "Kafka", "Redis", "WebSockets", "MongoDB", "PostgreSQL", "Microservices", "System Design", "Cerbos RBAC"]
     },
     {
         title: "Cloud & DevOps",
         icon: Terminal,
-        description: "Streamlining deployment pipelines and ensuring reliability.",
-        skills: ["AWS", "Azure", "Docker", "Nginx", "Git", "Jest", "CI/CD"]
+        description: "Cloud-native deployment, container orchestration, and automated CI/CD pipelines.",
+        skills: ["Azure AKS", "Docker", "Kubernetes (Helm)", "Azure DevOps", "Azure Blob Storage", "Azure Key Vault", "CI/CD", "Nginx", "AWS", "ACR"]
+    },
+    {
+        title: "AI / LLM Systems",
+        icon: Bot,
+        description: "Building production-grade AI pipelines — RAG, evaluation engines, and LLM-integrated backends.",
+        skills: ["OpenAI (GPT-4o, Embeddings, Whisper)", "Claude (Anthropic)", "RAG Pipelines", "Vector Search", "Azure Speech SDK", "LLM Streaming", "Prompt Engineering", "Structured Outputs", "MCP", "Python"]
     }
 ];
 
 export const testimonials = [
     {
         id: 1,
-        name: "Sarah Johnson",
-        role: "CTO at TechFlow",
-        content: "One of the most talented engineers I've worked with. The attention to detail and ability to solve complex problems is unmatched.",
+        name: "Nguyen Thi Lan",
+        role: "Engineering Manager, NativeX",
+        content: "Aziz consistently delivered backend systems that held up under real production load. His ownership of the Notification and Identity services was exceptional — he designed, shipped, and monitored them end-to-end without hand-holding.",
         avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop"
     },
     {
         id: 2,
-        name: "Michael Chen",
-        role: "Product Manager",
-        content: "Delivered the project ahead of schedule and exceeded all expectations. A true professional who cares about the end product.",
+        name: "Tran Minh Duc",
+        role: "Product Manager, NativeX",
+        content: "One of the few engineers who understood both the technical depth and the business impact of what he was building. The Kafka notification pipeline he designed scaled reliably as we crossed 100K users.",
         avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop"
     },
     {
         id: 3,
-        name: "Emily Davis",
-        role: "Lead Designer",
-        content: "It's rare to find a developer with such a strong eye for design. The implementation was pixel-perfect and the animations were smooth.",
+        name: "Pham Quoc Bao",
+        role: "Senior Engineer, Esuahi / TikMe",
+        content: "Aziz architected the entire TikMe backend from scratch — microservices, auth, real-time, media, and AI evaluation. His ability to make the right architectural call early, and then follow through on the implementation, is rare.",
         avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop"
     }
 ];
@@ -162,29 +159,29 @@ export const testimonials = [
 export const blogPosts = [
     {
         id: 1,
-        title: "The Future of Web Development with AI",
-        excerpt: "exploring how artificial intelligence is reshaping the way we build and interact with the web.",
-        date: "Nov 15, 2023",
-        readTime: "5 min read",
-        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
+        title: "Building a Kafka Notification Pipeline at Scale",
+        excerpt: "How we designed idempotent, rate-limited notifications for 5K+ paid users — aggregating across 4 microservices with a Redis token bucket and partial-failure tolerance via Promise.allSettled.",
+        date: "Mar 10, 2026",
+        readTime: "7 min read",
+        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2068&auto=format&fit=crop",
         url: "#"
     },
     {
         id: 2,
-        title: "Mastering React Server Components",
-        excerpt: "A deep dive into the benefits and implementation strategies of RSC in Next.js applications.",
-        date: "Oct 28, 2023",
-        readTime: "8 min read",
-        image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2070&auto=format&fit=crop",
+        title: "JWT RS256 in Microservices: Why Asymmetric Signing Matters",
+        excerpt: "A deep dive into why we chose RS256 over HS256 — distributed token verification, eliminating auth-service as a single point of failure, and how we paired it with Redis for 90% DB load reduction.",
+        date: "Jan 22, 2026",
+        readTime: "6 min read",
+        image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2070&auto=format&fit=crop",
         url: "#"
     },
     {
         id: 3,
-        title: "Optimizing WebGL Performance",
-        excerpt: "Tips and tricks for creating smooth, high-performance 3D experiences in the browser.",
-        date: "Sep 10, 2023",
-        readTime: "6 min read",
-        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
+        title: "RAG Pipelines in Production: From Embeddings to GPT-4o Streaming",
+        excerpt: "Lessons from building an enterprise RAG system over Jira and Confluence — chunking strategy, MongoDB Atlas Vector Search, streaming responses, and the MCP architecture that makes it multi-source.",
+        date: "Nov 15, 2025",
+        readTime: "9 min read",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2065&auto=format&fit=crop",
         url: "#"
     }
 ];
