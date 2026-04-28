@@ -1,7 +1,26 @@
 # My Profile — Syed Abdul Aziz
 
-> Synthesized from resume, professional experience notes, and microservice handover docs (Esuahi-Docs/).
-> Use this as the authoritative source for generating interview content.
+> **Source of truth** for generating interview content, portfolio copy, and any AI-assisted career tools.
+> Synthesized from: resume (Apr 2026), LinkedIn data, and microservice handover docs (Esuahi-Docs/).
+
+---
+
+## Contact & Links
+
+| Field | Value |
+|-------|-------|
+| Location | Hyderabad, India |
+| Phone | +91 8328082973 |
+| Email | syedaziz9999@gmail.com |
+| LinkedIn | [linkedin.com/in/syed-abdul-aziz](https://linkedin.com/in/syed-abdul-aziz/) |
+
+---
+
+## Professional Summary
+
+Senior Software Engineer with **4+ years of experience** building distributed, event-driven backend systems for learning platforms serving **100K+ users**. Specialized in real-time services, authentication, media delivery, and Kafka-based architectures deployed on **Azure AKS**. Recently focused on AI systems — including **RAG-based search**, **LLM evaluation pipelines**, and **vector search** using OpenAI and Claude.
+
+Started as a frontend intern, progressively took ownership of full-stack and backend microservices, and ultimately led backend architecture for a greenfield digital transformation project (TikMe / Esuahi).
 
 ---
 
@@ -9,84 +28,122 @@
 
 | Period | Company / Payroll | Role | Focus |
 |--------|------------------|------|-------|
-| Nov 2021 – Mar 2023 (~1.5 yrs) | Topica / Squad (under Mr. Sandeep) | Intern → SDE | Frontend-heavy; worked on NativeX products |
-| Apr 2023 – Jun 2025 (~2.25 yrs) | NativeX (payroll: GoEnglishX) | SDE → SDE II | Full NativeX lifecycle: product launch → feature development → production maintenance |
-| Jul 2025 – Mar 2026 (~9 months) | Esuahi (payroll: GoEnglishX) | Senior SDE | Transitioned Esuahi's offline LMS to online (TikMe); product on dev/staging, not publicly launched |
-| Mar 31, 2026 | — | Resigned | Company requested part-time due to no product roadmap (management focused on offline business); resigned rather than accept part-time. |
+| Nov 2021 – Mar 2023 (~1.5 yrs) | Topica / Skuad | Intern → SDE | Frontend-heavy; Edumall & early NativeX |
+| Apr 2023 – Apr 2024 (~1 yr) | NativeX (payroll: GoEnglishX) | SDE | Full-stack feature development; product launch phase |
+| Apr 2024 – Jun 2025 (~1.25 yrs) | NativeX (payroll: GoEnglishX) | SDE II | Backend ownership: Identity, Wallet, Scheduling, Notification services |
+| Jul 2025 – Mar 2026 (~9 months) | Esuahi (payroll: GoEnglishX) | Senior SDE | Greenfield TikMe backend; dev/staging — not publicly launched |
+| Mar 31, 2026 | — | Resigned | Company requested part-time (no product roadmap); resigned rather than accept part-time |
 
 **Total experience: 4+ years** (Nov 2021 – Mar 2026)
 
-> **Note for interviews:** GoEnglishX is the payroll/holding company opened by my manager — not a separate product or employer. NativeX and Esuahi were the actual products I worked on across those phases.
-
----
-
-## Background Context — Interview Narrative
-
-### NativeX — Startup from Scratch
-NativeX was a **greenfield ed-tech startup** focused on **English learning for Vietnamese working professionals** — helping them improve communication skills for career growth. There was no existing codebase or product history. I joined early (via Squad/Topica) and helped build the platform from the ground up — from zero to a platform serving 100K+ users with ~5K paid subscribers.
-
-This means I have hands-on experience with:
-- Making early architecture decisions that go into **production** and have to scale
-- Working with **no blueprint** — figuring out patterns, tooling, and design as you go
-- Owning features end-to-end: design → build → deploy → fix production bugs → iterate
-
-**Interview angle:** *"I've worked in a startup where I had to make decisions with incomplete information, move fast, and own the outcome — not just implement tickets."*
-
----
-
-### Esuahi / TikMe — Digital Transformation
-Esuahi is an **established organization headquartered in Ho Chi Minh City, Vietnam**, operating at the intersection of Vietnamese and Japanese markets. Their core business:
-- **Education & training**: Japanese language, business manners, professional mindset
-- **Labour dispatch**: sending Vietnamese technical intern trainees to Japan (3-year programs)
-- **Advanced engineer placement**: long-term work placements in Japan
-- **HR services in Vietnam**: career development and human resource introduction
-- **Vietnam market entry support**: helping Japanese companies expand into Vietnam
-
-They had years of these **offline operations** — coaches, students, dispatch programs — but **no digital platform**. TikMe was the initiative to bring all of this online. I joined to architect and build the entire backend infrastructure from scratch.
-
-This is a different challenge from a pure startup:
-- **Translating complex offline workflows into software**: dispatch programs, class structures, coach-student relationships, HR pipelines — all had to become data models and business logic
-- **Multi-market product**: Vietnamese and Japanese users, with different expectations and content needs
-- **Greenfield tech on top of a mature org**: the engineering was new, but the business rules were battle-tested over years of offline delivery
-
-**Interview angle:** *"At Esuahi I wasn't just building features — I was digitising an entire business. That meant understanding their offline model deeply — how they run classes, manage students, dispatch trainees — before writing a single line of code."*
+> **Note for interviews:** GoEnglishX is the payroll/holding company opened by my manager — not a separate product. NativeX and Esuahi were the actual products I worked on across those phases. The SDE → SDE II promotion at NativeX reflects the shift from feature development to full backend service ownership.
 
 ---
 
 ## Identity & Strengths
 
-- Backend-heavy full-stack engineer
+- **Backend-heavy full-stack engineer** with a solid frontend foundation
 - **End-to-end ownership**: designed, built, deployed, and handed over production microservices
 - Strong in: distributed systems, event-driven architecture, real-time systems, API design, AI/LLM integration
-- Cloud-native: Azure AKS, Azure DevOps CI/CD, Azure Key Vault, Azure Blob Storage
+- **Cloud-native**: Azure AKS, Azure DevOps CI/CD, Azure Key Vault, Azure Blob Storage
+- Experienced in taking **greenfield projects from 0 → production** at scale (NativeX: 100K+ users)
+- **Award**: Best Stand-alone Remote Contributor — NativeX, 2023
 
 ---
 
-## Core Stack
+## Education
+
+**B.Tech in Computer Science Engineering**
+JNTUH, Hyderabad | *Aug 2016 – Feb 2021*
+
+---
+
+## Core Technical Stack
 
 | Layer | Technologies |
 |-------|-------------|
-| Backend | NestJS, Node.js, TypeScript, Express |
-| Frontend | React, TypeScript |
-| API | GraphQL (Apollo Federation v2), REST |
+| Backend | NestJS, Node.js, TypeScript, Python, Express.js |
+| Frontend | React.js, Next.js, MUI, Tailwind, Shadcn |
+| API | GraphQL (Apollo Federation v2), REST APIs |
 | Databases | MongoDB, PostgreSQL (TypeORM), Redis |
-| Messaging | Apache Kafka |
-| Real-time | WebSockets, Redis Pub/Sub |
-| Auth | JWT (RS256), Argon2, OTP flows |
-| Cloud | Azure AKS, Azure Blob Storage, Azure DevOps, Azure Key Vault, VNCDN |
-| AI/LLM | OpenAI, Claude (Anthropic), Whisper, Azure Speech, Deepgram |
+| Messaging | Apache Kafka, BullMQ |
+| Real-time | WebSockets (WSS), Redis Pub/Sub |
+| Auth | JWT (RS256), Argon2, OAuth, OTP flows |
+| Cloud | Azure AKS, Azure Blob Storage, Azure DevOps, Azure Key Vault, VNCDN, AWS |
+| AI/LLM | OpenAI (GPT-4o, Embeddings, Whisper), Claude (Anthropic), Azure Speech SDK, Deepgram, RAG Pipelines, Vector Search (MongoDB Atlas), LLM Streaming, Prompt Engineering, Structured Outputs, MCP |
 | Authorization | Cerbos (policy-based RBAC) |
-| DevOps | Docker, Kubernetes (Helm), Azure Pipelines, Azure Container Registry |
+| Architecture | Distributed Systems, Event-Driven Architecture, Scalable System Design, Fault Tolerance, Idempotency, Rate Limiting, Retry Strategies |
+| DevOps | Docker, Kubernetes (Helm), Azure Pipelines, Azure Container Registry (ACR), CI/CD, Nginx |
+| Testing | Jest, Playwright, Unit & Integration Testing |
+| Data | Data Modeling, Indexing, ACID Transactions, Query Optimization |
 
 ---
 
-## ESUHAI / TikMe LMS — Architecture Overview
+## Experience Deep-Dives
 
-**Product:** TikMe — a brand new online platform for the Vietnamese and Japanese market, planned to cover skills learning, job training, HR services, and more. Previously the company operated mostly offline; TikMe was the greenfield move to bring everything online.
-**Status:** Development/staging only — product was **not publicly launched**. Infrastructure and all microservices were built and running on a dev/staging environment, but the platform had not gone live to end users as of my last working day (March 31, 2026).
-**Platform:** NestJS microservices on Azure AKS, connected via Apollo Federation Gateway
+---
 
-### System Components
+### Esuhai Co., Ltd. — Senior Software Engineer
+**Jul 2025 – Mar 2026 (9 mos) | Remote**
+
+Leading Vietnamese-Japanese workforce and education company. Their core business spans language training, labour dispatch (Vietnam → Japan), HR services, and market entry support. **TikMe** was the initiative to digitize their entire offline operation into a scalable online platform.
+
+**Context:** Greenfield tech on top of a mature org — engineering was new, but business rules were battle-tested over years of offline delivery. Product reached dev/staging; not publicly launched as of my last working day (Mar 31, 2026).
+
+**Key Contributions:**
+- **TikMe Architecture**: Architected the full NestJS microservices backend on Azure AKS, modernizing a 25-year-old education platform.
+- **Core Services**: Owned end-to-end development of Auth, Media, and Chat services using Kafka/Redis event-driven workflows.
+- **Real-time WebSocket Service**: Built a platform-wide WebSocket service for chat, notifications, and live updates with low-latency delivery (10,000 connections/pod).
+- **Rocket.Chat Integration**: Integrated Rocket.Chat with a custom GraphQL wrapper and fine-grained RBAC using Cerbos.
+- **Infrastructure**: Deployed microservices to Azure AKS with gateway-level WSS routing; managed secrets via Key Vault; ensured reliable CI/CD rollouts.
+- **Auth & Security**: Designed JWT/Redis auth with rate limiting and auditing; **reduced DB load by 90%** via hybrid session storage.
+- **LLM Evaluation Service**: Implemented a provider-abstracted evaluation engine over OpenAI and Claude, enabling AI-based assessment scoring and automated summaries via GraphQL.
+- **RAG Search System**: Built a RAG-based internal search over Jira and Confluence using Python, MCP, and OpenAI embeddings with MongoDB Atlas Vector Search and GPT-4o streaming.
+
+**Interview angle:** *"At Esuhai I wasn't just building features — I was digitising an entire business. That meant understanding their offline model deeply before writing a single line of code."*
+
+---
+
+### NativeX Edtech — Software Engineer → Software Engineer II
+**Apr 2023 – Jun 2025 (~2.25 yrs) | Remote**
+
+English learning platform for Vietnamese working professionals. Greenfield startup from scratch; I joined early and helped build the platform from zero to serving **100K+ trial users** with **~5K paid subscribers**.
+
+**Phase 1 — SDE (Apr 2023 – Apr 2024):** Full-stack feature development. Worked on frontend learning features (question types, progress views, calendar-based scheduling) and began contributing to backend services.
+
+**Phase 2 — SDE II (Apr 2024 – Jun 2025):** Transitioned to full backend ownership of core platform services.
+
+**Key Contributions:**
+- **Full Backend Ownership**: Led Identity, Wallet, Scheduling, and Notification services end-to-end.
+- **Notification Pipeline**: Designed a high-throughput weekly pacing notification system for paid subscribers — aggregated data across **4 upstream microservices** using `Promise.allSettled` (partial failure tolerance), delivered via Kafka, with a **500 notifications/min** Redis token bucket rate limiter and idempotent delivery.
+- **Logging Optimization**: Improved backend logging quality — reduced noise while preserving diagnostics, **cutting logging costs by ~25%**.
+- **Business Logic**: Built backend workflows for paid users enforcing eligibility rules, purchase limits, credit allocation, and package constraints via internal admin APIs.
+- **Production Ops**: Actively monitored cloud logs and debugged critical registration and mobile number validation flows in production.
+- **Frontend (Next.js)**: Contributed to core learning features — interactive question types, progress dashboards, test workflows, and calendar-based scheduling — as part of a major UI revamp.
+- **Tech Stack**: React.js, Next.js, Node.js, NestJS, TypeScript, GraphQL (Apollo), MongoDB, PostgreSQL, Kafka, Redis, Docker, Jest.
+
+**Interview angle:** *"I've worked in a startup where I had to make decisions with incomplete information, move fast, and own the outcome — not just implement tickets. We went from zero to 100K+ users, and I owned the infrastructure that made that scale possible."*
+
+---
+
+### Topica Edtech Group — Software Engineer
+**Nov 2021 – Mar 2023 (~1.5 yrs) | Remote**
+
+Leading online education provider in Southeast Asia.
+
+- **Rapid Growth**: Joined as an intern; converted to full-time within **three months** based on performance.
+- **Edumall**: Built responsive, reusable frontend components for production releases on Edumall (an Udemy-like platform).
+- **NativeX (early stage)**: Contributed to the early development of NativeX — frontend learning flows, testing modules, and live session interfaces.
+- **Global Collaboration**: Worked with cross-functional, remote teams across India and Vietnam in Agile sprints and code reviews.
+- **Tech**: Next.js, React.js, JavaScript, TypeScript, Apollo GraphQL, MUI, CSS3.
+
+---
+
+## ESUHAI / TikMe — Architecture Overview
+
+**Product:** TikMe — greenfield online platform for Vietnamese and Japanese market, covering skills learning, job training, HR services, and dispatch management.
+**Status:** Development/staging only — **not publicly launched** as of March 31, 2026.
+**Platform:** NestJS microservices on Azure AKS, composed via Apollo Federation Gateway.
 
 ```
 Clients (Web / Mobile)
@@ -100,18 +157,18 @@ Clients (Web / Mobile)
   - REST reverse proxy (Zoom OAuth, Media, Webhooks)
   - Deployed on AKS
         │
-        ├─── Auth Service (subgraph)
-        ├─── Chat Service (subgraph)
-        ├─── Media Service (subgraph)
-        ├─── Evaluation Service (subgraph)
+        ├─── Auth Service (subgraph)         → PostgreSQL, Redis, Kafka
+        ├─── Chat Service (subgraph)         → MongoDB, Redis Pub/Sub, Kafka, Rocket.Chat
+        ├─── Media Service (subgraph)        → MongoDB, Azure Blob, VNCDN
+        ├─── Evaluation Service (subgraph)   → MongoDB, Azure Speech, Claude, OpenAI, Kafka
         ├─── [User / Curriculum / Class Services]
         │
-        └─── Real-Time Service (WebSocket only, not GraphQL)
+        └─── Real-Time Service (WebSocket)   → Redis Pub/Sub, JWT RS256
 
-Event Bus: Kafka (domain events)
-Cache / Pub-Sub: Redis
-Secrets: Azure Key Vault (CSI driver → Kubernetes)
-CI/CD: Azure Pipelines → Docker → ACR → Helm → AKS
+Event Bus:  Kafka (domain events, durable & replayable)
+Cache/RT:   Redis (sessions, rate limits, Pub/Sub, idempotency)
+Secrets:    Azure Key Vault (CSI driver → Kubernetes)
+CI/CD:      Azure Pipelines → Docker → ACR → Helm → AKS
 ```
 
 ---
@@ -120,136 +177,87 @@ CI/CD: Azure Pipelines → Docker → ACR → Helm → AKS
 
 ### 1. API Gateway
 
-**What it is:** Unified entry point for all clients — acts as GraphQL Federation Gateway + secure REST reverse proxy.
+**Role:** Unified entry point — GraphQL Federation Gateway + secure REST reverse proxy.
+**Stack:** NestJS, Apollo Federation Gateway, Redis, Cerbos, express-rate-limit
 
-**Built with:** NestJS, Apollo Federation Gateway, Redis, Cerbos, express-rate-limit
+**Key decisions:**
+- Apollo Federation: each domain service owns its schema (subgraph); gateway composes them.
+- Cerbos for RBAC: policy-based, decoupled from app logic; evaluates principal + resource + action.
+- GraphQL protection: depth limiting, query complexity limits, introspection disabled in prod.
+- REST proxy for Zoom OAuth callbacks, media streaming, webhook ingestion.
+- Rate limiting: `express-rate-limit` + Redis; IP whitelisting; HTTP 429 on breach.
 
-**Key design decisions:**
-- Apollo Federation chosen so each domain service owns its own schema (subgraph); gateway composes them
-- Cerbos for policy-based RBAC — decoupled from app logic; evaluates principal + resource + action
-- GraphQL protection: depth limiting, query complexity limits, introspection disabled in prod, malicious query detection
-- REST proxy for non-GraphQL flows: Zoom OAuth callbacks, media streaming, webhook ingestion
-- Rate limiting via `express-rate-limit` + Redis; IP whitelisting for trusted systems; HTTP 429 on breach
-
-**Request flow:**
-1. Client sends GraphQL request
-2. IP blocking + rate limiting
-3. Query depth/complexity validation
-4. JWT extraction → user context injected into headers
-5. Cerbos authorization check (operation-level + subgraph-level)
-6. Route to correct subgraph
-7. Response returned
-
-**Auth model:** Gateway extracts JWT, injects user context headers into all subgraph calls. Services trust the gateway — no re-validation needed.
-
-**Deployment:** AKS, ingress via Azure Application Gateway / NGINX. Internal services never exposed publicly.
+**Request flow:** IP filter → rate limit → query depth/complexity → JWT extract → Cerbos auth → subgraph route
 
 ---
 
 ### 2. Auth Service
 
-**What it is:** Standalone NestJS GraphQL microservice (Apollo Federation subgraph) for all authentication and session management.
+**Stack:** NestJS, GraphQL (Apollo Federation v2), PostgreSQL (TypeORM), Redis (ioredis), Kafka, JWT RS256, Argon2
 
-**Built with:** NestJS, GraphQL (schema-first, Federation v2), PostgreSQL (TypeORM), Redis (ioredis), Kafka, JWT RS256, Argon2
+**Responsibilities:** Login/Logout, OTP registration, refresh token rotation, session tracking, admin password reset, rate limiting, audit logging, Kafka user lifecycle events.
 
-**Responsibilities:**
-- Login / Logout
-- OTP-based registration and forgot-password
-- Refresh token rotation with session tracking
-- Create password / Reset password / Change password
-- Admin password reset
-- Session persistence and revocation
-- Rate limiting + audit logging per operation
-- Publishes Kafka events on user lifecycle
-
-**Key design decisions:**
-- **JWT RS256** (asymmetric): private key signs tokens, public key distributed to all services for verification — services can verify without calling auth-service
-- **Argon2** for password hashing (memory-hard, resistant to GPU attacks)
-- **Redis** for: session store, rate limit counters, single-use reset tokens
-- **PostgreSQL** (not MongoDB) — auth data is relational and requires ACID guarantees (users, sessions, OTPs, login attempts)
-- Rate limiting is per-operation and configurable: separate limits for login, forgot-password, OTP request, OTP verify
-- Refresh token rotation: old session revoked on each refresh; full session invalidation on logout
+**Key decisions:**
+- **JWT RS256**: private key signs tokens; public key distributed to all services — distributed verification, no SPOF.
+- **Argon2**: memory-hard hashing (resistant to GPU/ASIC attacks).
+- **PostgreSQL (not MongoDB)**: auth data is relational (users ↔ sessions ↔ OTPs); ACID guarantees required.
+- **Redis**: session store, rate limit counters, single-use reset tokens with TTL.
+- **90% DB load reduction**: hybrid session storage — hot sessions in Redis, cold in PostgreSQL.
+- Rate limits are per-operation: separate limits for login, OTP request/verify, forgot-password.
 
 **Kafka events published:**
 - `Auth.created` — OTP registration complete
 - `Auth.password.created` — first password set
 - `Auth.user.created` — admin user creation
 
-**Security details:**
-- Reset tokens: single-use, stored in Redis with TTL
-- Secrets managed via Azure Key Vault (CSI driver)
-- Rate limit responses: standard error codes with clear messaging
-
-**Rate limit config (example):**
-- Login: configurable max attempts per window
-- OTP request/verify: separate limits to prevent OTP brute force
-- Forgot password: separate limit
-
 ---
 
 ### 3. Chat Service
 
-**What it is:** Core messaging backend. NestJS Apollo Federation subgraph that wraps Rocket.Chat for message persistence while owning all business logic, access control, and real-time event publishing.
-
-**Built with:** NestJS, Apollo Federation v2, MongoDB, Redis (cache + Pub/Sub), Rocket.Chat (REST), Kafka (consumer), Cerbos
-
-**Responsibilities:**
-- User sync (TikMe ↔ Rocket.Chat identity mapping)
-- Room management: DM, Group, CLASS_GROUP
-- Message send/delete with idempotency
-- Paginated message history
-- Unread count tracking
-- RBAC via gateway (Cerbos)
-- Kafka consumer for user and class lifecycle events
-- Redis Pub/Sub for real-time event delivery to real-time-service
+**Stack:** NestJS, Apollo Federation v2, MongoDB, Redis (cache + Pub/Sub), Rocket.Chat (REST), Kafka, Cerbos
 
 **Key architecture decisions:**
-- **Rocket.Chat as black-box persistence engine** — all message storage delegated to RC via its REST API; chat-service owns business logic + access control on top. RC is never exposed to frontend.
-- **Redis Pub/Sub for real-time** (not Kafka) — latency is critical for chat; Redis gives sub-millisecond pub/sub vs Kafka's higher latency
-- **Kafka for domain events** — durable, replayable events for user sync and class group provisioning
-- **HTTP (not WebSocket) for sending messages** — enables idempotency, retry, rate limiting, per-request auth validation. WebSocket used only for receiving events.
-- **Idempotency via Redis** — dedup key prevents duplicate messages; `idempotency:<key>` with configurable TTL
+- **Rocket.Chat as black-box persistence**: all message storage delegated to RC via REST API; chat-service owns business logic + access control. RC never exposed to frontend.
+- **Redis Pub/Sub for real-time** (not Kafka): sub-millisecond latency vs. Kafka's higher latency.
+- **Kafka for domain events**: durable/replayable for user sync and class group provisioning.
+- **HTTP for sending messages** (not WebSocket): enables idempotency, retry, rate limiting, per-request auth.
+- **Idempotency via Redis**: dedup key (`idempotency:<key>`) with configurable TTL.
 
-**DM access rules (business logic example):**
+**DM access rules (business logic):**
 - Student ↔ Student: NOT allowed
 - Coach ↔ Coach: NOT allowed
 - Coach ↔ Student: allowed only if in the same class
 
 **Real-time flow:**
-1. Client sends message via GraphQL mutation
-2. chat-service validates idempotency
-3. Gets RC user token (cached in Redis)
-4. Sends to Rocket.Chat REST API
-5. Updates unread counts in MongoDB
-6. Publishes to Redis channel (`chat.message.created`)
-7. real-time-service picks up from Redis and pushes to WebSocket clients
+1. Client → GraphQL mutation → chat-service
+2. Idempotency check (Redis)
+3. Get RC user token (cached in Redis)
+4. Send to Rocket.Chat REST API
+5. Update unread counts (MongoDB)
+6. Publish to Redis channel (`chat.message.created`)
+7. Real-time service picks up → pushes to WebSocket clients
 
-**Kafka events consumed:**
-- `Auth.user.created` → sync user to Rocket.Chat
-- `User.profile.updated` → update RC profile
-- `Class.batch.created` → create CLASS_GROUP room
-- `Class.batch.students_enrolled` / `removed` → add/remove room members
+**Kafka events consumed:** `Auth.user.created`, `User.profile.updated`, `Class.batch.created`, `Class.batch.students_enrolled/removed`
 
-**Redis keys:**
-- `rc:token:<rcUserId>` — cached RC impersonation token
-- `room:<id>` — room metadata cache
-- `idempotency:<key>` — message dedup
-- `chat.message.created`, `chat.typing.indicator`, `chat.unread.updated` — Pub/Sub channels
+**Redis key map:**
+| Key | Purpose |
+|-----|----------|
+| `rc:token:<rcUserId>` | Cached RC impersonation token |
+| `room:<id>` | Room metadata cache |
+| `idempotency:<key>` | Message dedup |
+| `chat.message.created` | Pub/Sub channel |
+| `chat.typing.indicator` | Pub/Sub channel |
+| `chat.unread.updated` | Pub/Sub channel |
 
-**Rate limits:**
-- sendMessage: 30/min
-- createRoom: 5/min
-- Default: 100/min
+**Rate limits:** sendMessage: 30/min | createRoom: 5/min | Default: 100/min
 
 ---
 
 ### 4. Real-Time Service
 
-**What it is:** Platform-wide WebSocket gateway. Pure delivery engine — no REST, no GraphQL, no business logic, no data storage. Subscribes to Redis Pub/Sub and pushes events to connected clients via WebSocket.
+**Stack:** NestJS, WebSocket (WSS), Redis Pub/Sub, JWT RS256
 
-**Built with:** NestJS, WebSocket (WSS), Redis Pub/Sub, JWT RS256
-
-**Key design principle — NOT chat-only.** It is a generic event delivery platform:
+**Design principle:** NOT chat-only. Generic event delivery platform — no business logic, no data storage.
 
 | Current use cases | Future use cases |
 |-------------------|-----------------|
@@ -267,135 +275,78 @@ CI/CD: Azure Pipelines → Docker → ACR → Helm → AKS
 6. Events delivered to user's connections
 7. On disconnect: cleanup connection, set presence `offline`
 
-**Limits:**
-- Max 5 connections per user (multi-device)
-- Max 10,000 total connections per pod
-- Rate limit: 60 messages/min per connection
-- Heartbeat: ping every 30s, timeout after 60s
+**Capacity:** Max 5 connections/user (multi-device) | Max 10,000 connections/pod | Heartbeat: 30s ping, 60s timeout
 
-**Scaling strategy:**
-- Stateless — no sticky sessions needed
-- Redis acts as shared event bus across all pods
-- Scale horizontally: each pod subscribes to same Redis channels
-- Guidelines: 1 pod up to 2k connections, 2–3 pods for 8k–20k, 5 pods for 50k
+**Horizontal scaling guidelines:**
+- 1 pod → up to 2K connections
+- 2–3 pods → 8K–20K connections
+- 5 pods → ~50K connections
+- Stateless — no sticky sessions needed; Redis acts as shared event bus across all pods
 
-**Why separate service (not inside chat-service):**
-- Independent scaling: WebSocket connections scale differently from request/response
-- Reusable: other services (notifications, live class) can publish events without coupling to chat
-- Isolation: a crash in the WS layer doesn't take down chat business logic
-
-**Redis vs Kafka choice for real-time:**
-- Redis chosen for sub-millisecond latency, no persistence overhead
-- Future path: Kafka → bridge service → Redis → WS (for durability when needed)
+**Why separate from chat-service:** Independent scaling, reusable across services (notifications, live class), fault isolation — a crash in the WS layer doesn't take down chat business logic.
 
 ---
 
 ### 5. Media Service
 
-**What it is:** System of record for all media assets on the platform — manages upload lifecycle, secure access URLs, CDN integration, and streaming.
-
-**Built with:** NestJS, Apollo Federation v2, MongoDB (Mongoose), Azure Blob Storage, VNCDN, JWT RS256
+**Stack:** NestJS, Apollo Federation v2, MongoDB (Mongoose), Azure Blob Storage, VNCDN, JWT RS256
 
 **Upload flow:**
 1. `initUpload` mutation → returns SAS (Shared Access Signature) URL
 2. Client uploads directly to Azure Blob (bypasses service, reduces bandwidth)
 3. `completeUpload` mutation → marks asset as `READY` in MongoDB
 
-**Asset status lifecycle:** `INITIATED` → `READY` → `DELETED` (soft delete)
+**Asset lifecycle:** `INITIATED` → `READY` → `DELETED` (soft delete)
 
-**Access model:**
-- Private assets: SAS URL (time-limited, user/org scoped)
-- Public assets: unsigned CDN URL
-- CDN optional: env-flag controlled; falls back to SAS if disabled
+**Key decisions:**
+- **Metadata + Blob separation**: MongoDB owns metadata; Azure Blob owns raw bytes — independently scalable.
+- **SAS URLs**: no file proxying = better performance, lower cost.
+- **CDN (VNCDN)**: signed tokens for private content, unsigned for public.
+- **DataLoader**: batching GraphQL queries to prevent N+1.
 
-**Streaming:**
-- Range-header supported streaming via `/api/edge/media/` and `/api/public/media/` endpoints
-- Private streams: `Cache-Control: no-store`
-- Public streams: `Cache-Control: max-age`
+**Size limits:** Images 10MB | Audio 50MB | Video 500MB | Documents 25MB
 
-**Storage containers (Azure Blob):**
-- `media-ugc` — user-generated content (assignments, voice recordings)
-- `media-content` — curated curriculum + class recordings
-- `publiccontainer` — public assets
-
-**Key design decisions:**
-- **Metadata + Blob separation**: MongoDB owns metadata (ownership, status, variants), Azure Blob owns raw bytes — independently scalable
-- **SAS URLs**: no file proxying through service = better performance, lower cost
-- **CDN integration (VNCDN)**: signed CDN tokens for private content, unsigned for public
-- **Variant support**: `metadata.variants.*` stores transcoded/resized versions without schema changes
-- **DataLoader** used for batching GraphQL queries to prevent N+1
-
-**Validation policies:**
-- Content type validation (whitelist of allowed mediaTypes)
-- Size limits per type: images 10MB, audio 50MB, video 500MB, documents 25MB
-- TTL bounds enforced (min 60s, max 3600s)
-- Ownership validation: user/org scoped access
-
-**Contacts:** Service owner — Syed Abdul Aziz
+**Azure Blob containers:** `media-ugc` (user content), `media-content` (curriculum), `publiccontainer`
 
 ---
 
 ### 6. Evaluation Service
 
-**What it is:** Hybrid AI grading engine for TikMe — handles speech evaluation, AI rubric feedback, and manual teacher grading.
-
-**Built with:** NestJS 11, GraphQL (Apollo Federation), MongoDB, Azure Speech SDK, Claude (Anthropic), OpenAI, Kafka
+**Stack:** NestJS 11, GraphQL (Apollo Federation), MongoDB, Azure Speech SDK, Claude (Anthropic), OpenAI, Kafka
 
 **Three evaluation engines:**
 
 | Engine | Description |
 |--------|-------------|
-| STT (Azure Speech) | Batch audio evaluation — transcription + pronunciation/fluency/prosody/accuracy scores, word-level phoneme analysis |
+| STT (Azure Speech) | Batch audio — transcription + pronunciation/fluency/prosody/accuracy scores, phoneme analysis |
 | AI (Claude) | Rubric-based qualitative feedback from dynamic prompt templates stored in MongoDB |
 | Manual | Teacher grading via GraphQL mutations; optionally emits Kafka event to update student progress |
 
-**Key design decisions:**
-
-- **Vendor Factory Pattern** — `VendorProcessorFactory` abstracts STT and AI providers. Azure Speech is active; Deepgram and Google are scaffolded. Claude is active; OpenAI is scaffolded. Swapping vendors is a config change, not a code change.
-- **Batch STT, not real-time** — Students record and submit; audio downloaded as a buffer, converted to WAV via FFmpeg if needed, then sent to Azure Speech REST API in one call. Gives full audit trail + retry capability.
-- **Dynamic Prompt Templates** — Claude prompts stored in MongoDB `PromptTemplate` collection, keyed by string. Educators can update rubrics from an admin UI without any code deployment.
-- **Async AI trigger** — After STT completes, if score is below threshold, Claude evaluation fires as a non-blocking async task. Client doesn't wait.
-- **Retry with exponential backoff** — `withRetry()` wraps all external calls: 1s → 2s → 4s.
-- **Cost tracking** — Every Claude call logs input/output token counts and dollar cost to MongoDB. Aggregatable per student, course, or month.
-- **MongoDB over PostgreSQL** — Evaluation schemas differ per subject type (pronunciation has phoneme scores, essays have rubric scores). Flexible document model avoids constant migrations.
+**Key decisions:**
+- **Vendor Factory Pattern**: `VendorProcessorFactory` abstracts STT and AI providers. Swapping vendors is a config change, not a code change.
+- **Dynamic Prompt Templates**: Claude prompts stored in MongoDB, keyed by string. Educators update rubrics from admin UI without code deployment.
+- **Async AI trigger**: After STT completes, if score below threshold, Claude evaluation fires as a non-blocking async task.
+- **Retry with exponential backoff**: `withRetry()` wraps all external calls (1s → 2s → 4s).
+- **Cost tracking**: Every Claude call logs input/output token counts and dollar cost to MongoDB.
+- **MongoDB over PostgreSQL**: evaluation schemas differ per subject type; flexible document model avoids migrations.
 
 **Combined oral assessment flow:**
 ```
 Student submits audio → Media Service (Azure Blob)
-  → Evaluation Service: download + WAV convert + Azure Speech
+  → Evaluation Service: download + WAV convert (FFmpeg) + Azure Speech
   → MongoDB (STT record, COMPLETED)
   → [async] Claude: load prompt template → rubric feedback → MongoDB (linked AI record)
   → [optional] Teacher manual review
   → Frontend: Azure scores + Claude feedback + teacher comments
 ```
 
-**Security:** JWT RS256, SAS tokens for audio access, API keys in Azure Key Vault
-
----
-
-## Rocket.Chat Integration
-
-**Role in system:** Black-box message persistence engine, internal only. Never user-facing.
-
-**Why Rocket.Chat:**
-- Self-hosted (data control, no SaaS costs)
-- Battle-tested message persistence and room management
-- Can be replaced without changing the GraphQL contract exposed to clients
-
-**Integration pattern:**
-- chat-service communicates via RC REST API only
-- Admin PAT stored in Azure Key Vault
-- **User impersonation**: chat-service generates per-user tokens via RC's `users.createToken` endpoint — allows messages to be sent as the actual user, not as admin
-- Tokens cached in Redis (`rc:token:<rcUserId>`) with configurable TTL
-- RC MongoDB is completely isolated — chat-service never queries it directly
-
 ---
 
 ## AI / RAG System
 
-**What it is:** Enterprise-grade internal search tool for engineers to query across Jira and Confluence using natural language.
+**What it is:** Enterprise-grade internal search for engineers to query across Jira and Confluence using natural language.
 
-**Built with:** OpenAI embeddings, MongoDB Atlas Vector Search, GPT-4o streaming, MCP (Model Context Protocol)
+**Stack:** Python, OpenAI embeddings, MongoDB Atlas Vector Search, GPT-4o streaming, MCP (Model Context Protocol)
 
 **Flow:**
 1. Documents ingested from Jira / Confluence
@@ -404,25 +355,32 @@ Student submits audio → Media Service (Azure Blob)
 4. User query → embed query → vector similarity search → retrieve top-k chunks
 5. GPT-4o generates streaming answer with source attribution
 
-**Key capabilities:**
-- Semantic search (not keyword-based)
-- Source attribution in every answer
-- Streaming responses for low perceived latency
-- MCP-based architecture for connecting to multiple data sources
+**Capabilities:** Semantic search (not keyword), source attribution, streaming responses, MCP-based multi-source architecture.
 
 ---
 
-## NativeX — Earlier Work
+## Rocket.Chat Integration
 
-**Role:** SDE → SDE II (~3 years)
-**Products:** NativeX (ed-tech product), later LMS platform
+**Role:** Black-box message persistence engine, internal-only. Never user-facing.
 
-**Key contribution:**
-- **Kafka notification pipeline** — weekly pacing notifications for ~5K paid users (100K+ total users on platform)
-  - Aggregated data from 4 upstream microservices using `Promise.allSettled` (partial failure tolerance)
-  - Redis token bucket rate limiter: 500 notifications/min
-  - Idempotent delivery: dedup key stored in Redis
-  - Result: reliable delivery + 25% reduction in logging costs (removed noisy log patterns)
+**Integration pattern:**
+- chat-service communicates via RC REST API only
+- Admin PAT stored in Azure Key Vault
+- **User impersonation**: chat-service generates per-user tokens via RC's `users.createToken` — messages sent as actual user, not admin
+- Tokens cached in Redis (`rc:token:<rcUserId>`) with configurable TTL
+- RC MongoDB is completely isolated — chat-service never queries it directly
+
+**Why Rocket.Chat:** Self-hosted (data control, no SaaS costs), battle-tested persistence, replaceable without changing the GraphQL contract exposed to clients.
+
+---
+
+## NativeX — Notification Pipeline (Key Contribution)
+
+**Kafka notification pipeline** — weekly pacing notifications for ~5K paid users (100K+ total on platform):
+- Aggregated data from **4 upstream microservices** using `Promise.allSettled` (partial failure tolerance)
+- **Redis token bucket rate limiter**: 500 notifications/min
+- **Idempotent delivery**: dedup key stored in Redis (prevents double-sends on retries)
+- **Result**: reliable delivery + **~25% reduction in logging costs** (removed noisy log patterns)
 
 ---
 
@@ -445,18 +403,30 @@ Student submits audio → Media Service (Azure Blob)
 
 | Decision | Why |
 |----------|-----|
-| Apollo Federation for GraphQL | Each service owns its schema; gateway composes — avoids a single monolithic schema to maintain |
-| Cerbos for RBAC | Policy-based authorization decoupled from application code; policies versioned separately; testable without app |
+| Apollo Federation for GraphQL | Each service owns its schema; gateway composes — avoids a single monolithic schema |
+| Cerbos for RBAC | Policy-based auth decoupled from app code; policies versioned separately; testable without app |
 | Redis Pub/Sub for real-time (not Kafka) | Sub-millisecond latency critical for chat; Kafka latency too high for live events |
 | Kafka for domain events | Durability, replay capability, consumer groups — right tool for user/class lifecycle events |
-| Separate real-time-service | Independent scaling, reusability across services, isolation from business logic services |
+| Separate real-time-service | Independent scaling, reusability across services, isolation from business logic |
 | Rocket.Chat as black-box | Self-hosted message persistence; abstracted behind chat-service GraphQL contract — replaceable |
 | PostgreSQL for Auth | Auth data is relational (users ↔ sessions ↔ OTPs); ACID guarantees required |
-| MongoDB for Chat/Media | Flexible document schema suits message metadata and media variants |
-| SAS URLs for media | Clients upload/download directly to/from Azure Blob — service stays stateless, no bandwidth bottleneck |
+| MongoDB for Chat/Media/Eval | Flexible document schema suits message metadata, media variants, and evaluation schemas |
+| SAS URLs for media | Clients upload/download directly to Azure Blob — service stays stateless, no bandwidth bottleneck |
 | HTTP for sending messages (not WS) | Enables idempotency, retry, per-request rate limiting, and auth validation |
-| Argon2 for passwords | Memory-hard hash — resistant to GPU/ASIC brute force attacks; better than bcrypt |
-| JWT RS256 (asymmetric) | Services verify tokens with public key without calling auth-service — distributed verification, no SPOF |
+| Argon2 for passwords | Memory-hard hash — resistant to GPU/ASIC brute force; better than bcrypt |
+| JWT RS256 (asymmetric) | Services verify tokens with public key without calling auth-service — no SPOF |
+| Vendor Factory Pattern (Eval) | Swap AI/STT providers via config change, not code change — future-proof |
+| Async AI trigger (Eval) | Client doesn't wait for LLM — STT is sync, Claude is fire-and-forget |
+
+---
+
+## Awards & Recognition
+
+| Award | Year |
+|-------|------|
+| Best Stand-alone Remote Contributor — NativeX | 2023 |
+
+Recognized for independently delivering key features and improving workflows in a fully remote setup.
 
 ---
 
@@ -464,16 +434,35 @@ Student submits audio → Media Service (Azure Blob)
 
 | Fact | Detail |
 |------|--------|
+| Total experience | 4+ years (Nov 2021 – Mar 2026) |
 | Platform users (NativeX) | 100K+ total, ~5K paid |
 | Esuahi / TikMe status | Dev/staging only — not launched to production users |
 | Services built end-to-end | API Gateway, Auth, Chat, Real-Time, Media, Evaluation |
+| DB load reduction (Auth) | 90% via hybrid session storage (Redis + PostgreSQL) |
+| Logging cost reduction (NativeX) | ~25% |
 | WebSocket capacity per pod | 10,000 connections |
 | Presence TTL | 90 seconds (auto-cleanup) |
 | Chat message rate limit | 30/min per user |
 | NativeX notification rate limit | 500/min (Redis token bucket) |
-| Media size limits | Images 10MB, Audio 50MB, Video 500MB |
+| Media size limits | Images 10MB, Audio 50MB, Video 500MB, Documents 25MB |
 | JWT algorithm | RS256 (asymmetric) |
 | Password hashing | Argon2 |
-| Notification cost reduction | 25% logging cost reduction |
+| Notification aggregation | 4 upstream microservices via `Promise.allSettled` |
+| AI cost tracking | Per-call token count + dollar cost logged to MongoDB |
 | Last working day | March 31, 2026 |
-| Interview date | April 10, 2026 |
+
+---
+
+## Interview Narrative Angles
+
+### NativeX — Startup from Scratch
+*"I've worked in a startup where I had to make decisions with incomplete information, move fast, and own the outcome — not just implement tickets. We went from zero to 100K+ users, and I owned key parts of the infrastructure that made that scale possible."*
+
+### Esuahi / TikMe — Digital Transformation
+*"At Esuahi I wasn't just building features — I was digitising an entire business. That meant understanding their offline model deeply — how they run classes, manage students, dispatch trainees — before writing a single line of code."*
+
+### On Career Growth
+*"I joined as a frontend intern and progressively took on backend ownership, then senior-level architecture. Every step was driven by team need and my own initiative to solve harder problems."*
+
+### On AI/LLM Work
+*"I've gone beyond just calling OpenAI APIs. I built evaluation pipelines with provider abstraction, cost tracking per call, dynamic prompt templates updatable by non-engineers, and a full RAG system with vector search and GPT-4o streaming over internal company knowledge."*
