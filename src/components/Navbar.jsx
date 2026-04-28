@@ -15,18 +15,25 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    if (!isOpen) {
-      return undefined;
-    }
+    if (!isOpen) return;
 
     const onKeyDown = (event) => {
-      if (event.key === 'Escape') {
-        setIsOpen(false);
-      }
+      if (event.key === 'Escape') setIsOpen(false);
     };
 
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [isOpen]);
 
   return (

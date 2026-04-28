@@ -47,6 +47,10 @@
     @apply border-border;
   }
 
+  html, body {
+    @apply overflow-x-hidden;
+  }
+
   html {
     scroll-padding-top: 6rem;
   }

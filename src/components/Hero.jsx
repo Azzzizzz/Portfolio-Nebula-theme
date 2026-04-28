@@ -41,7 +41,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-screen flex-col border-b border-white/[0.06] pt-24 md:pt-28"
+      className="relative flex min-h-screen flex-col border-b border-white/[0.06]"
     >
 
 
@@ -60,7 +60,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.05, ease: EASE }}
-            className="font-display text-[2rem] leading-[1.05] tracking-[-0.02em] text-foreground sm:text-[3rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem]"
+            className="font-display text-[2.2rem] leading-[1.05] tracking-[-0.02em] text-foreground sm:text-[3rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem]"
           >
             I take products from zero
             <br />
@@ -72,7 +72,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={reducedMotion ? undefined : { opacity: 0, y: -12 }}
                 transition={{ duration: 0.55, ease: EASE }}
-                className={`inline-block whitespace-nowrap ${struck ? 'line-through decoration-2 opacity-50' : 'accent-text'}`}
+                className={`inline-block ${struck ? 'line-through decoration-2 opacity-50' : 'accent-text'}`}
               >
                 {value}
               </motion.span>
@@ -90,9 +90,7 @@ export default function Hero() {
           >
             <div className="mb-4 h-px w-16 bg-[hsl(var(--accent))]" />
             <p className="label-mono leading-7 md:leading-8">
-              Full-stack engineer · backend-heavy · production AI
-              <br />
-              Hyderabad · 4+ yrs · open to senior / staff roles
+              Production AI · 4+ years shipping · Open to senior / staff roles
             </p>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-ink-muted">
               {heroContent.summary}

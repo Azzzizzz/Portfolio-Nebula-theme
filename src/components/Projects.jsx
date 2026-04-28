@@ -38,7 +38,7 @@ export default function Projects() {
           study={c}
           sectionTitle="Scale story"
           visual={
-            <div className="grid grid-cols-2 gap-px border border-white/[0.06] bg-white/[0.06] self-start">
+            <div className="grid grid-cols-1 gap-px border border-white/[0.06] bg-white/[0.06] self-start sm:grid-cols-2">
               {c.numbers.map((item, index) => (
                 <motion.div
                   key={item.label}

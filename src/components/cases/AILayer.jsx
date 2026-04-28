@@ -45,7 +45,7 @@ function PromptVisual() {
 
   return (
     <div ref={ref} className="grid gap-6">
-      <div className="rounded-[1.9rem] border border-white/[0.08] bg-white/[0.03] p-6 md:p-8">
+      <div className="min-w-0 rounded-[1.9rem] border border-white/[0.08] bg-white/[0.03] p-6 md:p-8">
         <div className="mb-4 flex items-center justify-between">
           <span className="label-mono">Rubric template</span>
           <span className="label-mono accent-text">Evaluation engine</span>
@@ -101,7 +101,7 @@ export default function AILayer() {
       visual={<PromptVisual />}
       intro="The point of this layer was not to add AI. It was to make the AI editable, observable, and grounded enough to survive production."
     >
-      <div className="grid grid-cols-2 gap-px border border-white/[0.06] bg-white/[0.06]">
+      <div className="grid grid-cols-1 gap-px border border-white/[0.06] bg-white/[0.06] sm:grid-cols-2">
         {aiLayerCase.numbers.map((item) => (
           <div key={item.label} className="bg-background p-6 md:p-8">
             <div className="font-display text-[2.2rem] leading-none text-[hsl(var(--accent))] md:text-[3rem]">
