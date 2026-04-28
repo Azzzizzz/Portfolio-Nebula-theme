@@ -65,8 +65,8 @@ export default {
       },
 
       fontFamily: {
-        sans:    ["'Geist'", "'Geist Sans'", "system-ui", "sans-serif"],
-        display: ["'Instrument Serif'", "Georgia", "serif"],
+        sans:    ["'Inter'", "system-ui", "sans-serif"],
+        display: ["'Outfit'", "system-ui", "sans-serif"],
         mono:    ["'JetBrains Mono'", "monospace"],
       },
 

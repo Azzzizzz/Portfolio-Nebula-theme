@@ -24,7 +24,7 @@ export const personalInfo = {
 };
 
 export const heroContent = {
-  eyebrow: 'Senior software engineer · Hyderabad',
+  eyebrow: 'Senior software engineer · Hyderabad, India',
   summary:
     'Backend-heavy full-stack engineer focused on systems that survive real users, real traffic, and real business rules.',
   proof: [
