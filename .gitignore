@@ -49,3 +49,6 @@ coverage
 .gemini
 tmp
 temp
+
+# Optional npm cache directory
+.npm
